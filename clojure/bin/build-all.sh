@@ -60,10 +60,17 @@ done
 #
 
 banner 'Verifying native images'
-for p in `find $OUT ! -name \*.jar -type f` ; do
-    test_p=`$p &> /dev/null && echo OK || echo FAIL`
-    pp=`echo $p | sed 's,^.*out/,,g'`
-    printf "verifying %-40s : %s\n" $pp $test_p
+for g in $graal_versions ; do
+    gv=$($g/bin/java -version 2>&1 | grep GraalVM | cut -d' ' -f4)
+    for c in "${clj_versions[@]}" ; do
+        p=simple-$c-graal-$gv
+        if [ -e $OUT/$p ] ; then
+            test_p=`$OUT/$p &> /dev/null && echo OK || echo FAIL`
+        else
+            test_p='ERROR'
+        fi
+        printf "verifying %-40s : %s\n" $p $test_p
+    done
 done
 
 # END

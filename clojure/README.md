@@ -47,6 +47,8 @@ Currently testing the following Clojure versions
 And the following GraalVM versions
 
   - GraalVM-CE-1.0.0-rc14
+  - GraalVM-CE-1.0.0-rc15
+  - GraalVM-CE-1.0.0-rc16
   - GraalVM-CE-19.0.0
 
 
@@ -56,12 +58,20 @@ This is the current result:
 ----------------------------------------------------------------------
                       Verifying native images
 ----------------------------------------------------------------------
-verifying simple-clojure-1.7.0-graal-1.0.0-rc14    : OK
+verifying simple-clojure-1.10.0-graal-1.0.0-rc14   : OK
 verifying simple-clojure-1.9.0-graal-1.0.0-rc14    : OK
 verifying simple-clojure-1.8.0-graal-1.0.0-rc14    : OK
+verifying simple-clojure-1.7.0-graal-1.0.0-rc14    : OK
+verifying simple-clojure-1.10.0-graal-1.0.0-rc15   : OK
+verifying simple-clojure-1.9.0-graal-1.0.0-rc15    : OK
+verifying simple-clojure-1.8.0-graal-1.0.0-rc15    : OK
+verifying simple-clojure-1.7.0-graal-1.0.0-rc15    : OK
+verifying simple-clojure-1.10.0-graal-1.0.0-rc16   : OK
+verifying simple-clojure-1.9.0-graal-1.0.0-rc16    : OK
+verifying simple-clojure-1.8.0-graal-1.0.0-rc16    : OK
+verifying simple-clojure-1.7.0-graal-1.0.0-rc16    : OK
 verifying simple-clojure-1.10.0-graal-19.0.0       : FAIL
 verifying simple-clojure-1.9.0-graal-19.0.0        : FAIL
-verifying simple-clojure-1.10.0-graal-1.0.0-rc14   : OK
 verifying simple-clojure-1.8.0-graal-19.0.0        : FAIL
 verifying simple-clojure-1.7.0-graal-19.0.0        : FAIL
 ```
