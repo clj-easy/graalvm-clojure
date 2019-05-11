@@ -27,13 +27,15 @@ function build-jar(){
 function build-native(){
     GRAAL_VER=$($2/bin/java -version 2>&1 | grep GraalVM | cut -d' ' -f4)
     echo '(-) Building' $1 'native with GraalVM' $GRAAL_VER
-    $2/bin/native-image $NATIVE_OPTS --report-unsupported-elements-at-runtime -jar ./out/simple-$1-uberjar.jar -H:Name=./out/simple-$1-graal-$GRAAL_VER
+    OPTS=NATIVE_OPTS_$(echo "$GRAAL_VER" | tr "[:lower:]" "[:upper:]" | tr -d "\n" | tr -c '[:alnum:]' '_')
+    $2/bin/native-image $NATIVE_OPTS ${!OPTS} --report-unsupported-elements-at-runtime -jar ./out/simple-$1-uberjar.jar -H:Name=./out/simple-$1-graal-$GRAAL_VER
 }
 
 #
 # Clojure versions to try out
 #
 clj_versions=(clojure-1.10.0 clojure-1.9.0 clojure-1.8.0 clojure-1.7.0)
+#clj_versions=(clojure-1.8.0)
 
 #
 # GraalVM version to try out (GRAAL home paths)
@@ -45,6 +47,8 @@ graal_versions=$(cat graal.paths)
 #
 # add native-image options here:
 NATIVE_OPTS=""
+NATIVE_OPTS_19_0_0="--initialize-at-build-time"
+
 
 for c in "${clj_versions[@]}" ; do
     banner "Building $c"
