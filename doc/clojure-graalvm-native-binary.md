@@ -150,3 +150,76 @@ real    0m0.010s
 user    0m0.004s
 sys     0m0.004s
 ```
+
+### A final touch
+
+If you don't want to remember the command line to build the native binary you can always
+add it to the `project.clj` as follow:
+
+Add the [`lein-shell` plugin](https://github.com/hypirion/lein-shell) to the `project.clj`
+
+``` clojure
+  :profiles {:uberjar {:aot :all}
+             :dev {:plugins [[lein-shell "0.5.0"]]}}
+```
+
+Now you can add an alias for it the `project.clj itself:
+
+``` clojure
+  :aliases
+  {"native"
+   ["shell"
+    "native-image" "--report-unsupported-elements-at-runtime"
+    "--initialize-at-build-time"
+    "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
+    "-H:Name=./target/${:name}"]}
+```
+
+Overall your `project.clj` should look like as follow:
+
+``` clojure
+(defproject hello-world "0.1.0-SNAPSHOT"
+  :description "FIXME: write description"
+  :url "http://example.com/FIXME"
+  :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
+            :url "https://www.eclipse.org/legal/epl-2.0/"}
+  :dependencies [[org.clojure/clojure "1.9.0"]]
+  :main hello-world.core
+  :profiles {:uberjar {:aot :all}
+             :dev {:plugins [[lein-shell "0.5.0"]]}}
+
+  :aliases
+  {"native"
+   ["shell"
+    "native-image" "--report-unsupported-elements-at-runtime"
+    "--initialize-at-build-time"
+    "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
+    "-H:Name=./target/${:name}"]}
+  )
+```
+
+With this in place you can just run `lein native` to build the native binary:
+
+``` bash
+$ lein native
+Build on Server(pid: 76573, port: 63429)
+[./target/hello-world:76573]    classlist:     925.69 ms
+[./target/hello-world:76573]        (cap):   1,052.47 ms
+[./target/hello-world:76573]        setup:   1,416.62 ms
+[./target/hello-world:76573]   (typeflow):   3,499.51 ms
+[./target/hello-world:76573]    (objects):   1,224.39 ms
+[./target/hello-world:76573]   (features):     129.42 ms
+[./target/hello-world:76573]     analysis:   4,946.87 ms
+[./target/hello-world:76573]     (clinit):      95.94 ms
+[./target/hello-world:76573]     universe:     298.63 ms
+[./target/hello-world:76573]      (parse):     622.46 ms
+[./target/hello-world:76573]     (inline):   1,119.10 ms
+[./target/hello-world:76573]    (compile):   4,646.36 ms
+[./target/hello-world:76573]      compile:   6,730.73 ms
+[./target/hello-world:76573]        image:     672.79 ms
+[./target/hello-world:76573]        write:     199.98 ms
+[./target/hello-world:76573]      [total]:  15,268.99 ms
+
+$ ./target/hello-world
+Hello, World!
+```
