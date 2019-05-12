@@ -15,11 +15,10 @@ Test with:
 
 It works only with some types, for example:
 
-    (comment
       ;; Throws exception
       (defn -main []
         (prn (nippy/freeze nippy/stress-data))
-        (prn (nippy/thaw (nippy/freeze nippy/stress-data)))))
+        (prn (nippy/thaw (nippy/freeze nippy/stress-data))))
 
 
 throws the following exception:
