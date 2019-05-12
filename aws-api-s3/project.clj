@@ -1,7 +1,9 @@
-(defproject nippy "0.1.0-SNAPSHOT"
+(defproject aws-api-s3 "0.1.0-SNAPSHOT"
 
   :dependencies [[org.clojure/clojure "1.10.0"]
-                 [com.taoensso/nippy "2.14.0"]]
+                 [com.cognitect.aws/api       "0.8.301"]
+                 [com.cognitect.aws/endpoints "1.1.11.537"]
+                 [com.cognitect.aws/s3        "714.2.430.0"]]
 
   :main simple.main
 

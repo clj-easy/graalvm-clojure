@@ -15,6 +15,7 @@ Here the list of libraries tested:
   - [amazonica/s3](./amazonica-s3) :x: (*Buildtime and Runtime error*)
   - [cheshire](./cheshire) :white_check_mark:
   - [nippy](./nippy) :warning: (*Can't serialize exceptions*)
+  - cognitect/aws-api+s3 :question:
   - ring/jetty :question:
   - ring/http-kit :question:
   - ring/aleph :question:
