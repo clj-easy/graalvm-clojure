@@ -16,4 +16,4 @@ Here the list of libraries tested:
   - [nippy](./nippy) :warning: (*Can't serialize exceptions*)
 
 
-More library to come (*PRs are welcome*).
+More libraries to come (*PRs are welcome*).
