@@ -1,4 +1,4 @@
-# How to build a native binary for you Clojure projects with GraalVM
+# How to build a native binary for your Clojure projects with GraalVM
 
 This guide shows the steps required to build native binaries out of
 your Clojure projects using GraalVM.
