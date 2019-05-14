@@ -16,6 +16,7 @@ Here the list of libraries tested:
   - [clojure/tools.logging+log4j](./tools-logging-log4j) - Logging library :white_check_mark:
   - [amazonica+s3](./amazonica-s3) - Cloud API wrapper library :x: (*Buildtime and Runtime error*)
   - [cheshire](./cheshire) - JSON parser/writer :white_check_mark:
+  - [clj-sophia](./clj-sophia) - A fast RAM-Disk hybrid storage :x: (Runtime error/JNA)
   - [nippy](./nippy) - Clojure serialization/deserialization library :warning: (*Can't serialize exceptions*)
   - cognitect/aws-api+s3 - Cloud API library :question:
   - ring/jetty - Web server :question:
