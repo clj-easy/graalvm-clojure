@@ -1,6 +1,6 @@
 # amazonica-s3
 
-Testing whether Amazonica/s3 library can be used in a native binary image with GraalVM.
+Testing whether [Amazonica/s3](https://github.com/mcohen01/amazonica) library can be used in a native binary image with GraalVM.
 
 ## Usage
 

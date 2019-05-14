@@ -1,6 +1,6 @@
 # cognitect/aws-api+s3
 
-Testing whether cognitect/aws-api+s3 library can be used in a native binary image with GraalVM.
+Testing whether [cognitect/aws-api+s3](https://github.com/cognitect-labs/aws-api) library can be used in a native binary image with GraalVM.
 
 ## Usage
 

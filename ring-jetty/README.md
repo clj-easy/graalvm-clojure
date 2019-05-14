@@ -1,6 +1,6 @@
 # ring+jetty
 
-Testing whether Ring library can be used in a native binary image with GraalVM.
+Testing whether [Ring](https://github.com/ring-clojure/ring) library can be used in a native binary image with GraalVM.
 
 ## Usage
 

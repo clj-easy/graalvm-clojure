@@ -12,14 +12,14 @@ Here the instructions on how to build your own Clojure projects with GraalVM.
 Here the list of libraries tested:
 
   - [Clojure core](./clojure) :white_check_mark:
-  - [amazonica/s3](./amazonica-s3) :x: (*Buildtime and Runtime error*)
-  - [cheshire](./cheshire) :white_check_mark:
-  - [nippy](./nippy) :warning: (*Can't serialize exceptions*)
-  - cognitect/aws-api+s3 :question:
-  - ring/jetty :question:
-  - ring/http-kit :question:
-  - ring/aleph :question:
-  - safely :question:
+  - [amazonica+s3](./amazonica-s3) - Cloud API wrapper library :x: (*Buildtime and Runtime error*)
+  - [cheshire](./cheshire) - JSON parser/writer :white_check_mark:
+  - [nippy](./nippy) - Clojure serialization/deserialization library :warning: (*Can't serialize exceptions*)
+  - cognitect/aws-api+s3 - Cloud API library :question:
+  - ring/jetty - Web server :question:
+  - ring/http-kit - Web server :question:
+  - ring/aleph - Web server :question:
+  - [safely](./safely) - Circuit breaker :white_check_mark:
 
 
 More libraries to come (*PRs are welcome*).

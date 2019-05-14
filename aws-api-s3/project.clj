@@ -14,7 +14,7 @@
   :aliases
   {"native"
    ["shell"
-    "native-image" "--report-unsupported-elements-at-runtime"
+    "native-image" "--report-unsupported-elements-at-runtime" "--no-server"
     "--initialize-at-build-time"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
     "-H:Name=./target/${:name}"]

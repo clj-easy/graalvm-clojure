@@ -1,6 +1,6 @@
 # Nippy
 
-Testing whether Nippy library can be used in a native binary image with GraalVM.
+Testing whether [Nippy](https://github.com/ptaoussanis/nippy) library can be used in a native binary image with GraalVM.
 
 ## Usage
 
