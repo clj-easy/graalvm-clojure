@@ -12,6 +12,8 @@ Here the instructions on how to build your own Clojure projects with GraalVM.
 Here the list of libraries tested:
 
   - [Clojure core](./clojure) :white_check_mark:
+  - [clojure/tools.logging](./tools-logging) - Logging library :white_check_mark:
+  - [clojure/tools.logging+log4j](./tools-logging-log4j) - Logging library :white_check_mark:
   - [amazonica+s3](./amazonica-s3) - Cloud API wrapper library :x: (*Buildtime and Runtime error*)
   - [cheshire](./cheshire) - JSON parser/writer :white_check_mark:
   - [nippy](./nippy) - Clojure serialization/deserialization library :warning: (*Can't serialize exceptions*)

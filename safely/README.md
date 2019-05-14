@@ -1,6 +1,7 @@
 # safely
 
 Testing whether [Safely](https://github.com/BrunoBonacci/safely) library can be used in a native binary image with GraalVM.
+It also show how to deal with SLF4J and Log4j.
 
 ## Usage
 
