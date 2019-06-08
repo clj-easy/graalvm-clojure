@@ -27,6 +27,12 @@ Here the list of libraries tested:
 
 More libraries to come (*PRs are welcome*).
 
+Interesting GraalVM documentation to build native-images:
+
+  - Understand [Class Initialization in Native Image](https://github.com/oracle/graal/blob/master/substratevm/CLASS-INITIALIZATION.md)
+  - [Assisted Configuration of Native Image Builds](https://github.com/oracle/graal/blob/master/substratevm/CONFIGURE.md)
+  - [URL Protocols on Substrate VM](https://github.com/oracle/graal/blob/master/substratevm/URL-PROTOCOLS.md) for `http` and `https`
+  - [JCA Security Services on Substrate VM](https://github.com/oracle/graal/blob/master/substratevm/JCA-SECURITY-SERVICES.md)
 
 ## License
 
