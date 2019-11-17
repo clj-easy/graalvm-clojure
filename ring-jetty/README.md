@@ -7,7 +7,7 @@ Testing whether [Ring](https://github.com/ring-clojure/ring) library can be used
 Currently testing:
 
     [ring/ring-core "1.7.1"]
-    [ring/ring-jetty-adapter "1.7.1"]
+    [ring/ring-jetty-adapter "1.8.0"]
 
 Test with:
 
@@ -25,3 +25,7 @@ Server: Jetty(9.4.12.v20180830)
 
 Hello GraalVM
 ```
+
+## Caveats
+
+* You need to use ring-jetty-adapter 1.8.0 to get [ring-clojure/ring#381](https://github.com/ring-clojure/ring/pull/381) 
