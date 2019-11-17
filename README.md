@@ -21,7 +21,7 @@ Here the list of libraries tested:
   - cognitect/aws-api+s3 - Cloud API library :question:
   - ring/jetty - Web server :question:
   - ring/http-kit - Web server :question:
-  - aleph - Web server :white_check_mark:
+  - [aleph](./aleph) - Web server :white_check_mark:
   - [safely](./safely) - Circuit breaker :white_check_mark:
 
 
