@@ -1,10 +1,11 @@
 # secure-random-trick
 
-A Clojure library designed to ... well, that part is up to you.
+The smallest project possible, which demonstrates the issue with SecureRandom objects bound to dynamic Vars.
 
 ## Usage
 
-FIXME
+1. Point `[:native-image :graal-bin]` in project.clj to your GRAAL_VM installation.
+2. Run `lein native-image`
 
 ## License
 
