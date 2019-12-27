@@ -6,11 +6,13 @@
 
   :profiles {:uberjar {:aot :all}
              :clojure-1.7.0  {:dependencies [[org.clojure/clojure "1.7.0"]]
-                      :uberjar-name "simple-clojure-1.7.0-uberjar.jar"}
+                              :uberjar-name "simple-clojure-1.7.0-uberjar.jar"}
              :clojure-1.8.0  {:dependencies [[org.clojure/clojure "1.8.0"]]
-                      :uberjar-name "simple-clojure-1.8.0-uberjar.jar"}
+                              :uberjar-name "simple-clojure-1.8.0-uberjar.jar"}
              :clojure-1.9.0  {:dependencies [[org.clojure/clojure "1.9.0"]]
-                      :uberjar-name "simple-clojure-1.9.0-uberjar.jar"}
+                              :uberjar-name "simple-clojure-1.9.0-uberjar.jar"}
              :clojure-1.10.0 {:dependencies [[org.clojure/clojure "1.10.0"]]
-                      :uberjar-name "simple-clojure-1.10.0-uberjar.jar"}}
-)
+                              :uberjar-name "simple-clojure-1.10.0-uberjar.jar"}
+             :clojure-1.10.1 {:dependencies [[org.clojure/clojure "1.10.1"]]
+                              :uberjar-name "simple-clojure-1.10.1-uberjar.jar"}}
+  )
