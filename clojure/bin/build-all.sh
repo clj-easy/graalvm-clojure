@@ -65,7 +65,7 @@ done
 
 banner 'Verifying native images'
 for g in $graal_versions ; do
-    gv=$($g/bin/java -version 2>&1 | grep GraalVM | cut -d' ' -f4)
+    gv=$($g/bin/java -version 2>&1 | grep GraalVM | grep -oE '\d+(\.\d+)+' | head -1)
     for c in "${clj_versions[@]}" ; do
         p=simple-$c-graal-$gv
         if [ -e $OUT/$p ] ; then
