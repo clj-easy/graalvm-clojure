@@ -45,7 +45,7 @@ Currently testing the following Clojure versions
   - Clojure 1.10.0
   - Clojure 1.10.1
 
-And the following GraalVM versions
+And the following GraalVM versions have been tested.
 
   - GraalVM-CE-1.0.0-rc14
   - GraalVM-CE-1.0.0-rc15
@@ -53,6 +53,7 @@ And the following GraalVM versions
   - GraalVM-CE-19.0.0
   - GraalVM-CE-19.3.0.2
   - GraalVM-CE-19.3.1
+  - GraalVM-CE-20.0.0
 
 
 This is the current result:
@@ -61,29 +62,40 @@ This is the current result:
 ----------------------------------------------------------------------
                       Verifying native images
 ----------------------------------------------------------------------
+verifying simple-clojure-1.10.1-graal-20.0.0       : OK
+verifying simple-clojure-1.10.0-graal-20.0.0       : OK
+verifying simple-clojure-1.9.0-graal-20.0.0        : OK
+verifying simple-clojure-1.8.0-graal-20.0.0        : OK
+verifying simple-clojure-1.7.0-graal-20.0.0        : OK
+
 verifying simple-clojure-1.10.1-graal-19.3.1       : OK
 verifying simple-clojure-1.10.0-graal-19.3.1       : OK
 verifying simple-clojure-1.9.0-graal-19.3.1        : OK
 verifying simple-clojure-1.8.0-graal-19.3.1        : OK
 verifying simple-clojure-1.7.0-graal-19.3.1        : OK
+
 verifying simple-clojure-1.10.1-graal-19.3.0.2     : OK
 verifying simple-clojure-1.10.0-graal-19.3.0.2     : OK
 verifying simple-clojure-1.9.0-graal-19.3.0.2      : OK
 verifying simple-clojure-1.8.0-graal-19.3.0.2      : OK
 verifying simple-clojure-1.7.0-graal-19.3.0.2      : OK
+
 verifying simple-clojure-1.10.1-graal-19.0.0       : OK
 verifying simple-clojure-1.10.0-graal-19.0.0       : OK
 verifying simple-clojure-1.9.0-graal-19.0.0        : OK
 verifying simple-clojure-1.8.0-graal-19.0.0        : OK
 verifying simple-clojure-1.7.0-graal-19.0.0        : OK
+
 verifying simple-clojure-1.10.0-graal-1.0.0-rc16   : OK
 verifying simple-clojure-1.9.0-graal-1.0.0-rc16    : OK
 verifying simple-clojure-1.8.0-graal-1.0.0-rc16    : OK
 verifying simple-clojure-1.7.0-graal-1.0.0-rc16    : OK
+
 verifying simple-clojure-1.10.0-graal-1.0.0-rc15   : OK
 verifying simple-clojure-1.9.0-graal-1.0.0-rc15    : OK
 verifying simple-clojure-1.8.0-graal-1.0.0-rc15    : OK
 verifying simple-clojure-1.7.0-graal-1.0.0-rc15    : OK
+
 verifying simple-clojure-1.10.0-graal-1.0.0-rc14   : OK
 verifying simple-clojure-1.9.0-graal-1.0.0-rc14    : OK
 verifying simple-clojure-1.8.0-graal-1.0.0-rc14    : OK

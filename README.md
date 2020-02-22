@@ -23,6 +23,7 @@ Here the list of libraries tested:
   - ring/http-kit - Web server :question:
   - [aleph](./aleph) - Web server :white_check_mark:
   - [safely](./safely) - Circuit breaker :white_check_mark:
+  - [secure-random](./secure-random) - `SecureRandom` initialization :white_check_mark:
 
 
 More libraries to come (*PRs are welcome*).
