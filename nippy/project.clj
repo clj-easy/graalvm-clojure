@@ -1,6 +1,6 @@
 (defproject nippy "0.1.0-SNAPSHOT"
 
-  :dependencies [[org.clojure/clojure "1.10.0"]
+  :dependencies [[org.clojure/clojure "1.10.1"]
                  [com.taoensso/nippy "2.14.0"]]
 
   :main simple.main
