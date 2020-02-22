@@ -7,6 +7,4 @@ The smallest project possible, which demonstrates the issue with
 
 ## Usage
 
-1. Point `[:native-image :graal-bin]` in project.clj to your GRAAL_VM installation.
-2. Run `lein native-image`
-3. the run `./target/simple-main`
+ Run `lein do clean, uberjar, native, run-native`

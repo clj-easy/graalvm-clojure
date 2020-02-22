@@ -6,6 +6,7 @@
   :main simple.main
 
   :uberjar-name "simple-main.jar"
+
   :profiles {:uberjar {:aot :all}
              :dev {:plugins [[lein-shell "0.5.0"]]}}
 
