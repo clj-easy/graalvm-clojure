@@ -36,6 +36,18 @@ Interesting GraalVM documentation to build native-images:
   - [URL Protocols on Substrate VM](https://github.com/oracle/graal/blob/master/substratevm/URL-PROTOCOLS.md) for `http` and `https`
   - [JCA Security Services on Substrate VM](https://github.com/oracle/graal/blob/master/substratevm/JCA-SECURITY-SERVICES.md)
 
+
+## How to contribute
+
+If you wish to add a library and contribute with a PR please follow these steps:
+
+  1. Fork the project
+  2. use the `sample-project` as a template. `cp -r sample-project my-library`
+  3. add the library to the `project.clj` and the **native-image** parameters used
+  4. amend the `my-library/src/simple/main.clj` to use the library
+  5. amend the `my-library/README.md` with the info you discovered.
+  6. Make a PR with your findings and "Thank you" in advance.
+
 ## License
 
 Copyright © 2019-2020 Bruno Bonacci
