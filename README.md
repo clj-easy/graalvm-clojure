@@ -19,7 +19,7 @@ Here the list of libraries tested:
   - [clj-sophia](./clj-sophia) - A fast RAM-Disk hybrid storage :x: (Runtime error/JNA)
   - [nippy](./nippy) - Clojure serialization/deserialization library :warning: (*Can't serialize exceptions*)
   - cognitect/aws-api+s3 - Cloud API library :question:
-  - ring/jetty - Web server :question:
+  - [ring/jetty](./ring-jetty) - Web server :x: (*Runtime error*)
   - ring/http-kit - Web server :question:
   - [aleph](./aleph) - Web server :white_check_mark:
   - [safely](./safely) - Circuit breaker :white_check_mark:
