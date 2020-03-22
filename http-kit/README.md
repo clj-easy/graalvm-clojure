@@ -30,8 +30,9 @@ Hello GraalVM
 `[org.httpkit.client :as client]` :x:
 
 ## Notes on http-kit server
-**GraalVM-CE-Java8-20.0.0** is preferred when using `http-kit` as a server. 
-The native image compilation succeed with both **GraalVM-CE-Java11-20.0.0** and **GraalVM-CE-Java8-20.0.0** in this example project, however in a fully fledged application **GraalVM-CE-Java11-20.0.0** fails to compile. **GraalVM-CE-Java8-20.0.0** succeeds in both cases.
+**GraalVM-CE-Java8-20.0.0** is preferred when using `http-kit` as a server.    
+The native image compilation succeed with both **GraalVM-CE-Java11-20.0.0** and **GraalVM-CE-Java8-20.0.0** in this example project, however in a fully fledged application **GraalVM-CE-Java11-20.0.0** fails to compile.   
+**GraalVM-CE-Java8-20.0.0** succeeds in both cases.
 
 ```
 Error: No instances of java.io.FilePermission are allowed in the image heap as this class should be initialized at image runtime. To see how this object got instantiated use -H:+TraceClassInitialization.
