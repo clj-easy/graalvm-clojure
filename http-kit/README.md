@@ -71,7 +71,7 @@ Error: Image build request failed with exit status 1
 ```
 
 ## Notes on http-kit client
-Currently using GraalVM 20, http-kit fails to compile. 
+Currently using GraalVM 20, the `http-kit` client fails to compile. 
 
 ```
 Warning: Aborting stand-alone image build. Unsupported features in 2 methods
