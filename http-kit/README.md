@@ -1,6 +1,6 @@
 # aleph+netty
 
-Testing whether http-kit library can be used in a native binary image with GraalVM.
+Testing whether [http-kit](https://github.com/http-kit/http-kit) library can be used in a native binary image with GraalVM.
 
 ## Usage
 
