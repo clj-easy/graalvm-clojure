@@ -1,4 +1,4 @@
-# aleph+netty
+# http-kit
 
 Testing whether [http-kit](https://github.com/http-kit/http-kit) library can be used in a native binary image with GraalVM.
 
@@ -26,8 +26,8 @@ Hello GraalVM
 ```
 
 ## Results
-`[org.httpkit.server :as server]` can be used.
-`[org.httpkit.client :as client]` CANNOT be used
+`[org.httpkit.server :as server]` :white_check_mark:.   
+`[org.httpkit.client :as client]` :x:
 
 ## Notes on http-kit server
 **GraalVM-CE-Java8-20.0.0** is preferred when using `http-kit` as a server. 
