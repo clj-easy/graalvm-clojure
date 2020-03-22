@@ -21,7 +21,7 @@ Here the list of libraries tested:
   - [nippy](./nippy) - Clojure serialization/deserialization library :warning: (*Can't serialize exceptions*)
   - cognitect/aws-api+s3 - Cloud API library :question:
   - [ring/jetty](./ring-jetty) - Web server :x: (*Runtime error*)
-  - [http-kit](./http-kit) - Web server :white_check_mark:
+  - [http-kit](./http-kit) - Web server :white_check_mark: / Web server :x:
   - [aleph](./aleph) - Web server :white_check_mark:
   - [safely](./safely) - Circuit breaker :white_check_mark:
   - [secure-random](./secure-random) - `SecureRandom` initialization :white_check_mark:
