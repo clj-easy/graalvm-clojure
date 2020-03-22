@@ -12,6 +12,5 @@ Test with:
 
     lein do clean, uberjar, native, run-native
 
-
 ## Results
 `[hiccup.core]` :white_check_mark:
