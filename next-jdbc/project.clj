@@ -3,7 +3,7 @@
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [seancorfield/next.jdbc "1.0.409"]
                  [org.postgresql/postgresql "42.2.11"]
-                 [commons-codec/commons-codec "1.9"]]
+                 [honeysql "0.9.10"]]
 
   :main simple.main
 
