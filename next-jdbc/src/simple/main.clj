@@ -33,12 +33,13 @@
                 ["Pineapple" "spiky" 956]])
       sql/format))
 
-(defn -main [host db user password]
-  (let [datasource (jdbc/get-datasource {:dbtype "postgresql"
-                                         :dbname db
-                                         :user user
-                                         :password password
-                                         :host host
+(defn -main []
+  (let [creds (slurp "./database.env")
+        datasource (jdbc/get-datasource {:dbtype "postgresql"
+                                         :dbname (second (re-find #"POSTGRES_DB=(.*)" creds))
+                                         :user (second (re-find #"POSTGRES_USER=(.*)" creds))
+                                         :password (second (re-find #"POSTGRES_PASSWORD=(.*)" creds))
+                                         :host "localhost"
                                          :port 5432
                                          :useSSL false})
         table-name (str "graalvm_test_" (rand-int 10000))]

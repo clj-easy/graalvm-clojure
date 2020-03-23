@@ -12,8 +12,9 @@ Currently testing:
 
 Test with:
 
-    lein do clean, uberjar, native, run-native [host] [db] [user] [password]
-    e.g. lein do clean, uberjar, native, run-native db.server.com graal graaltester p@55w0rd
+    Start postgres in the terminal using `docker-compose up`
+
+    Then in a new terminal: `lein do clean, uberjar, native, run-native`
 
 
 ## Results
