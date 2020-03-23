@@ -42,7 +42,7 @@
                                          :host "localhost"
                                          :port 5432
                                          :useSSL false})
-        table-name (str "graalvm_test_" (rand-int 10000))]
+        table-name "graalvm_test"]
     (with-open [connection (jdbc/get-connection datasource)]
       (println "create table" table-name)
       (jdbc/execute! connection sql-create-table)
