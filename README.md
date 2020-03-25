@@ -28,6 +28,7 @@ Here the list of libraries tested:
   - [hiccup](./hiccup) - Fast library for rendering HTML in Clojure :white_check_mark:
   - [next.jdbc + honeysql](./next-jdbc) - Database driver and SQL-in-Clojure :white_check_mark:
   - [datascript](./datascript) - Immutable database and Datalog query engine :white_check_mark:
+  - [clostache](./clostache) - {{ mustache }} for Clojure :white_check_mark:
 
 More libraries to come (*PRs are welcome*).
 
