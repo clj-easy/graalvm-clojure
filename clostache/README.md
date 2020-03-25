@@ -12,8 +12,6 @@ Test with:
 
     lein do clean, uberjar, native, run-native
 
-```
-
 ## Results
 `[clostache.parser :as clo]` :white_check_mark:.  
 
