@@ -29,6 +29,7 @@ Here the list of libraries tested:
   - [next.jdbc + honeysql](./next-jdbc) - Database driver and SQL-in-Clojure :white_check_mark:
   - [datascript](./datascript) - Immutable database and Datalog query engine :white_check_mark:
   - [clostache](./clostache) - {{ mustache }} for Clojure :white_check_mark:
+  - [monger](./monger) - An idiomatic Clojure MongoDB driver with sane defaults :x:
 
 More libraries to come (*PRs are welcome*).
 
