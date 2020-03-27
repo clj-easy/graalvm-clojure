@@ -17,6 +17,7 @@ Test with:
 
 ## Results
 `[monger.core :as mg]` :x:   
+`[monger.collection :as mc]` :x:   
 `[monger.credentials :as mcr]` :x:   
 
 ## Notes
