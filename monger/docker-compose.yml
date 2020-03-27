@@ -1,0 +1,8 @@
+version: '3'
+services:
+  database:
+    image: "mongo:latest" # use latest official postgres version
+    env_file:
+      - database.env # configure postgres
+    ports:
+      - "27017:27017" # map ports
