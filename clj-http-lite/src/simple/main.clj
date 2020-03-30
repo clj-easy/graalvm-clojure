@@ -12,8 +12,9 @@
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "GET http://example.com/ => Status: " (:status (client/get "http://example.com/")))
-  (println "POST http://example.com/ => Status: " 
-    (:status (client/post "http://example.com/" {:headers {"content-type" "application/json; charset=utf-8"}
-                                               :body payload}))))
+  (let [get "http://localhost:3000/get" post "http://localhost:3000/post"]
+  (println "GET" get "=> Response: \n" (:body (client/get get)))
+  (println "POST" post "=> Response: \n" 
+    (:body (client/post post {:headers {"content-type" "application/json; charset=utf-8"}
+                                               :body payload})))))
           

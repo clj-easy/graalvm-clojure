@@ -10,7 +10,9 @@ Currently testing:
 
 Test with:
 
-    lein do clean, uberjar, native, run-native
+    Start an nginx server in the terminal using `docker-compose up`
+
+    Then in a new terminal: `lein do clean, uberjar, native, run-native`
 
 ## Results
 `[clj-http.lite.client :as client]` :white_check_mark:   
