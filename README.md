@@ -20,6 +20,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [aleph](./aleph)                                     | Web server                                             |                               |
 | :x:                | [amazonica+s3](./amazonica-s3)                       | Cloud API wrapper library                              | *Buildtime and Runtime error* |
 | :white_check_mark: | [cheshire](./cheshire)                               | JSON parser/writer                                     |                               |
+| :white_check_mark: | [clj-http-lite](./clj-http-lite)                             | Web client                             |                               |
 | :x:                | [clj-sophia](./clj-sophia)                           | A fast RAM-Disk hybrid storage                         | *Runtime error/JNA*           |
 | :white_check_mark: | [clostache](./clostache)                             | {{ mustache }} for Clojure                             |                               |
 | :question:         | cognitect/aws-api+s3                                 | Cloud API library                                      |                               |
