@@ -12,24 +12,27 @@ Here the instructions on how to build your own Clojure projects with GraalVM.
 
 Here the list of libraries tested:
 
-  - [Clojure core](./clojure) :white_check_mark:
-  - [clojure/tools.logging](./tools-logging) - Logging library :white_check_mark:
-  - [clojure/tools.logging+log4j](./tools-logging-log4j) - Logging library :white_check_mark:
-  - [amazonica+s3](./amazonica-s3) - Cloud API wrapper library :x: (*Buildtime and Runtime error*)
-  - [cheshire](./cheshire) - JSON parser/writer :white_check_mark:
-  - [clj-sophia](./clj-sophia) - A fast RAM-Disk hybrid storage :x: (Runtime error/JNA)
-  - [nippy](./nippy) - Clojure serialization/deserialization library :warning: (*Can't serialize exceptions*)
-  - cognitect/aws-api+s3 - Cloud API library :question:
-  - [ring/jetty](./ring-jetty) - Web server :x: (*Runtime error*)
-  - [http-kit](./http-kit) - Web server :white_check_mark: | Web client :x:
-  - [aleph](./aleph) - Web server :white_check_mark:
-  - [safely](./safely) - Circuit breaker :white_check_mark:
-  - [secure-random](./secure-random) - `SecureRandom` initialization :white_check_mark:
-  - [hiccup](./hiccup) - Fast library for rendering HTML in Clojure :white_check_mark:
-  - [next.jdbc + honeysql](./next-jdbc) - Database driver and SQL-in-Clojure :white_check_mark:
-  - [datascript](./datascript) - Immutable database and Datalog query engine :white_check_mark:
-  - [clostache](./clostache) - {{ mustache }} for Clojure :white_check_mark:
-  - [monger](./monger) - An idiomatic Clojure MongoDB driver with sane defaults :x: (*Buildtime error*)
+| Status             | Library                                              | Description                                            | Remarks                       |
+|:------------------:|------------------------------------------------------|--------------------------------------------------------|-------------------------------|
+| :white_check_mark: | [Clojure core](./clojure)                            |                                                        | works without Specs           |
+| :white_check_mark: | [clojure/tools.logging](./tools-logging)             | Logging library                                        |                               |
+| :white_check_mark: | [clojure/tools.logging+log4j](./tools-logging-log4j) | Logging library                                        |                               |
+| :white_check_mark: | [aleph](./aleph)                                     | Web server                                             |                               |
+| :x:                | [amazonica+s3](./amazonica-s3)                       | Cloud API wrapper library                              | *Buildtime and Runtime error* |
+| :white_check_mark: | [cheshire](./cheshire)                               | JSON parser/writer                                     |                               |
+| :x:                | [clj-sophia](./clj-sophia)                           | A fast RAM-Disk hybrid storage                         | *Runtime error/JNA*           |
+| :white_check_mark: | [clostache](./clostache)                             | {{ mustache }} for Clojure                             |                               |
+| :question:         | cognitect/aws-api+s3                                 | Cloud API library                                      |                               |
+| :white_check_mark: | [datascript](./datascript)                           | Immutable database and Datalog query engine            |                               |
+| :white_check_mark: | [hiccup](./hiccup)                                   | Fast library for rendering HTML in Clojure             |                               |
+| :white_check_mark: | [http-kit](./http-kit)                               | Web server                                             | *Web client :x:*              |
+| :x:                | [monger](./monger)                                   | An idiomatic Clojure MongoDB driver with sane defaults |                               |
+| :white_check_mark: | [next.jdbc + honeysql](./next-jdbc)                  | Database driver and SQL-in-Clojure                     |                               |
+| :warning:          | [nippy](./nippy)                                     | Clojure serialization/deserialization library          | *Can't serialize exceptions*  |
+| :x:                | [ring/jetty](./ring-jetty)                           | Web server                                             | *Runtime error*               |
+| :white_check_mark: | [safely](./safely)                                   | Circuit breaker                                        |                               |
+| :white_check_mark: | [secure-random](./secure-random)                     | `SecureRandom` initialization                          |                               |
+
 
 More libraries to come (*PRs are welcome*).
 
