@@ -13,7 +13,7 @@
   "I don't do a whole lot ... yet."
   [& args]
   (println "GET http://example.com/ => Status: " (:status (client/get "http://example.com/")))
-  (println "POST http://example.com/ => Response: \n" 
-    (:body (client/post "https://jsonplaceholder.typicode.com/posts" {:headers {"content-type" "application/json; charset=utf-8"}
-                                                                      :body payload}))))
+  (println "POST http://example.com/ => Status: " 
+    (:status (client/post "http://example.com/" {:headers {"content-type" "application/json; charset=utf-8"}
+                                               :body payload}))))
           
