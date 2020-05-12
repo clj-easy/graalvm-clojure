@@ -32,5 +32,4 @@ Test with:
 Exception in thread "main" com.oracle.svm.core.jdk.UnsupportedFeatureError: ObjectOutputStream.writeObject()
 ```
 
-This is because GraalVM currently doesn't support Java serialization, as seen issue [460](https://github.com/oracle/graal/issues/460). [PR 2323](https://github.com/oracle/graal/pull/2323) attempts to address this issue.   
-"Until the time comes. The way is shut." 
+This is because GraalVM currently doesn't support Java serialization, as seen issue [460](https://github.com/oracle/graal/issues/460). [PR 2323](https://github.com/oracle/graal/pull/2323) attempts to address this issue. "Until the time comes. The way is shut." 
