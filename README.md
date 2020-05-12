@@ -22,7 +22,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [cheshire](./cheshire)                               | JSON parser/writer                                     |                               |
 | :white_check_mark: | [clj-http-lite](./clj-http-lite)                             | Web client                             |                               |
 | :x:                | [clj-sophia](./clj-sophia)                           | A fast RAM-Disk hybrid storage                         | *Runtime error/JNA*           |
-| :white_check_mark: | [clj-uuid](./clj-uuid)                   | RFC4122 Unique Identifiers for Clojure  | namespaced uuids (v3/v5) can't accept objects |
+| :white_check_mark: | [clj-uuid](./clj-uuid)                   | RFC4122 Unique Identifiers for Clojure  | works without object based uuids (v3,v5) |
 | :white_check_mark: | [clostache](./clostache)                             | {{ mustache }} for Clojure                             |                               |
 | :question:         | cognitect/aws-api+s3                                 | Cloud API library                                      |                               |
 | :white_check_mark: | [datascript](./datascript)                           | Immutable database and Datalog query engine            |                               |
