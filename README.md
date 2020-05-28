@@ -26,6 +26,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [clostache](./clostache)                             | {{ mustache }} for Clojure                             |                               |
 | :question:         | cognitect/aws-api+s3                                 | Cloud API library                                      |                               |
 | :white_check_mark: | [datascript](./datascript)                           | Immutable database and Datalog query engine            |                               |
+| :warning:          | [fastmath](./fastmath)                               | Fast and primitive math and stats library              | *See README*                  |
 | :white_check_mark: | [hiccup](./hiccup)                                   | Fast library for rendering HTML in Clojure             |                               |
 | :white_check_mark: | [http-kit](./http-kit)                               | Web server                                             | *Web client :x:*              |
 | :x:                | [monger](./monger)                                   | An idiomatic Clojure MongoDB driver with sane defaults |                               |
