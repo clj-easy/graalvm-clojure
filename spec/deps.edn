@@ -1,0 +1,7 @@
+{:deps {org.clojure/clojure {:mvn/version "1.10.1"}
+        org.clojure/spec.alpha {:mvn/version "0.2.187"}}
+ :paths ["src"]
+ :aliases
+ {:depstar
+  {:extra-deps
+   {seancorfield/depstar {:mvn/version "1.0.94"}}}}}
