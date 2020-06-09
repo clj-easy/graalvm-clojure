@@ -25,7 +25,11 @@ jobs:
       - name: Echo file changes
         run: |
           echo Changed files: ${{ steps.get_file_changes.outputs.files }}      
-            
+                        
+      - name: Install Babashka
+        run: |
+          script/install_babashka
+          
       - name: Test builds
         run: |
           script/test ${{ steps.get_file_changes.outputs.files }}  
