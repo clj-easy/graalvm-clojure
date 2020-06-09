@@ -2,7 +2,7 @@
 
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [datascript "0.18.10"]
-                 ]
+                ]
 
   :main simple.main
 

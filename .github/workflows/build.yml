@@ -48,4 +48,5 @@ jobs:
           
       - name: Test builds
         run: |
+          export GRAALVM_HOME="$HOME/graalvm-ce-java11-20.1.0"
           script/test ${{ steps.get_file_changes.outputs.files }}  
