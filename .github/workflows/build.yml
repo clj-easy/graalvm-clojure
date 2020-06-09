@@ -21,7 +21,11 @@ jobs:
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           plaintext: true
-          
+                    
       - name: Echo file changes
         run: |
-          echo Changed files: ${{ steps.get_file_changes.outputs.files }}
+          echo Changed files: ${{ steps.get_file_changes.outputs.files }}      
+            
+      - name: Test builds
+        run: |
+          script/test ${{ steps.get_file_changes.outputs.files }}  

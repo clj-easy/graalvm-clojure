@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+curl -Lo archive.zip https://github.com/borkdude/babashka/releases/download/v0.1.0/babashka-0.1.0-linux-amd64.zip
+tar -zxvf archive.zip
+
