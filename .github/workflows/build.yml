@@ -14,6 +14,22 @@ jobs:
         with:
           fetch-depth: 1
           submodules: 'true'
+          
+      - name: Cache GraalVM
+        uses: actions/cache@v1
+        id: cache-graalvm
+        with:
+          path: ~/graalvm-ce-java11-20.1.0
+          key: ${{ runner.os }}-graalvm-20.1.0
+          restore-keys: |
+                ${{ runner.os }}-graalvm-20.1.0
+      - name: Download GraalVM
+        run: |
+          cd ~
+          if ! [ -d graalvm-ce-java11-20.1.0 ]; then
+            curl -O -sL https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java11-linux-amd64-20.1.0.tar.gz
+            tar xzf graalvm-ce-java11-linux-amd64-20.1.0.tar.gz
+          fi
 
       - name: Get file changes
         id: get_file_changes
