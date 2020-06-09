@@ -3,7 +3,7 @@
 (doseq [path (distinct (map (fn [path] (first (clojure.string/split path #"\/"))) *command-line-args*))] 
   (when (.exists (clojure.java.io/file (str path "/" "project.clj")))
     (println (str "Building native image for " path))
-    (let [res (clojure.java.shell/sh "lein" "native")]
+    (let [res (clojure.java.shell/sh "lein" "native" :dir path)]
       (when-not (zero? (:exit res))
         (println "Failed to build " path)
         (println (:out res) (:err res))
