@@ -25,6 +25,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [clj-uuid](./clj-uuid)       | RFC4122 Unique Identifiers for Clojure  | No objects in namespaced uuids |
 | :white_check_mark: | [clostache](./clostache)                             | {{ mustache }} for Clojure                             |                               |
 | :question:         | cognitect/aws-api+s3                                 | Cloud API library                                      |                               |
+| :white_check_mark: | [component](./component)                             | Managing lifecycle and dependencies of software        |                               |
 | :white_check_mark: | [datascript](./datascript)                           | Immutable database and Datalog query engine            |                               |
 | :warning:          | [fastmath](./fastmath)                               | Fast and primitive math and stats library              | *See README*                  |
 | :white_check_mark: | [hiccup](./hiccup)                                   | Fast library for rendering HTML in Clojure             |                               |
@@ -35,6 +36,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [ring/jetty](./ring-jetty)                           | Web server                                             |                               |
 | :white_check_mark: | [safely](./safely)                                   | Circuit breaker                                        |                               |
 | :white_check_mark: | [secure-random](./secure-random)                     | `SecureRandom` initialization                          |                               |
+| :x:                | [system](./system)                                   | Layer on top of components                             | *Buildtime error, see Readme* |
 
 
 More libraries to come (*PRs are welcome*).
