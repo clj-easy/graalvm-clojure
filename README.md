@@ -25,7 +25,7 @@ Here the list of libraries tested:
 | :x:                | [clj-sophia](./clj-sophia)                           | A fast RAM-Disk hybrid storage                         | *Runtime error/JNA*            |
 | :white_check_mark: | [clj-uuid](./clj-uuid)                               | RFC4122 Unique Identifiers for Clojure                 | No objects in namespaced uuids |
 | :white_check_mark: | [clostache](./clostache)                             | {{ mustache }} for Clojure                             |                                |
-| :question:         | cognitect/aws-api+s3                                 | Cloud API library                                      |                                |
+| :x:                | [cognitect/aws-api+s3](./aws-api-s3)                 | Cloud API library                                      | *Buildtime error*              |
 | :white_check_mark: | [component](./component)                             | Managing lifecycle and dependencies of software        |                                |
 | :white_check_mark: | [datascript](./datascript)                           | Immutable database and Datalog query engine            |                                |
 | :warning:          | [fastmath](./fastmath)                               | Fast and primitive math and stats library              | *See README*                   |
