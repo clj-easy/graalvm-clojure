@@ -16,7 +16,7 @@
    [io.netty/netty-buffer "4.1.39.Final"]]
 
 
-  :dependencies [[org.clojure/clojure "1.10.0"]
+  :dependencies [[org.clojure/clojure "1.10.2-alpha1"]
                  [aleph "0.4.7-alpha5"]]
   :main simple.main
   :uberjar-name "simple-main.jar"

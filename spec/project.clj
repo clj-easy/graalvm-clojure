@@ -1,12 +1,12 @@
-(defproject ring-jetty "0.1.0-SNAPSHOT"
+(defproject spec-graal "0.1.0-SNAPSHOT"
 
   :dependencies [[org.clojure/clojure "1.10.1"]
-                 [ring/ring-core "1.8.1"]
-                 [ring/ring-jetty-adapter "1.8.1"]]
+                 [org.clojure/spec.alpha "0.2.187"]]
 
-  :main simple.main
+  :main spec-graal.main
 
-  :uberjar-name "simple-main.jar"
+  :uberjar-name "spec-graal.jar"
+
   :profiles {:uberjar {:aot :all}
              :dev {:plugins [[lein-shell "0.5.0"]]}}
 
@@ -17,5 +17,4 @@
     "--initialize-at-build-time"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
     "-H:Name=./target/${:name}"]
-
    "run-native" ["shell" "./target/${:name}"]})

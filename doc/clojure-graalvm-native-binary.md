@@ -5,7 +5,7 @@ your Clojure projects using GraalVM.
 
 
 ### Step1 - Download and install GraalVM
-Go to https://github.com/oracle/graal/releases and download the
+Go to https://github.com/graalvm/graalvm-ce-builds/releases and download the
 binaries for your platform.
 
 Unpack the package in a folder and add it to the path:
@@ -14,9 +14,9 @@ Unpack the package in a folder and add it to the path:
 $ export GRAALVM_HOME=/full/path/to/graalvm
 $ export PATH=$GRAALVM_HOME/bin:$PATH
 $ java -version
-openjdk version "1.8.0_212"
-OpenJDK Runtime Environment (build 1.8.0_212-20190420112649.buildslave.jdk8u-src-tar--b03)
-OpenJDK GraalVM CE 19.0.0 (build 25.212-b03-jvmci-19-b01, mixed mode)
+openjdk version "11.0.7" 2020-04-14
+OpenJDK Runtime Environment GraalVM CE 20.1.0 (build 11.0.7+10-jvmci-20.1-b02)
+OpenJDK 64-Bit Server VM GraalVM CE 20.1.0 (build 11.0.7+10-jvmci-20.1-b02, mixed mode, sharing)
 ```
 
 Now install the `native-image` component:
@@ -24,14 +24,23 @@ Now install the `native-image` component:
 ``` bash
 $ gu install native-image
 Downloading: Component catalog from www.graalvm.org
-Processing component archive: Native Image
-Component Native Image (org.graalvm.native-image) installed.
+Processing Component: Native Image
+Downloading: Component native-image: Native Image  from github.com
+Installing new component: Native Image (org.graalvm.native-image, version 20.1.0)
 
 $ gu list
 ComponentId              Version             Component name      Origin
 --------------------------------------------------------------------------------
-graalvm                  19.0.0              GraalVM Core
-native-image             19.0.0              Native Image licencegithub.com
+graalvm                  20.1.0              GraalVM Core
+native-image             20.1.0              Native Image        github.com
+```
+
+**NOTE**: *if you are on Mac OSX you might need to de-quarantine the binaries.*
+Here a script to do so:
+
+``` bash
+# for Mac OSX
+sudo xattr -r -d com.apple.quarantine ${GRAALVM_HOME}
 ```
 
 ### Step2 - Your project
@@ -55,7 +64,9 @@ Update the `project.clj` and add the `:main`
   :url "http://example.com/FIXME"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url "https://www.eclipse.org/legal/epl-2.0/"}
-  :dependencies [[org.clojure/clojure "1.9.0"]]
+  ;; clojure version "1.10.2-alpha1" includes fixes for some graalvm specific issues
+  ;; see https://clojure.org/community/devchangelog#_release_1_10_2
+  :dependencies [[org.clojure/clojure "1.10.2-alpha1"]]
   ;; add the main namespace
   :main hello-world.core
 
@@ -89,8 +100,8 @@ Now build a uberjar.
 ``` bash
 $ lein do clean, uberjar
 Compiling hello-world.core
-Created /private/tmp/5/hello-world/target/hello-world-0.1.0-SNAPSHOT.jar
-Created /private/tmp/5/hello-world/target/hello-world-0.1.0-SNAPSHOT-standalone.jar
+Created /private/tmp/hello-world/target/hello-world-0.1.0-SNAPSHOT.jar
+Created /private/tmp/hello-world/target/hello-world-0.1.0-SNAPSHOT-standalone.jar
 ```
 
 Now that you have a `-standalone.jar` file which contains all the
@@ -103,26 +114,26 @@ can proceed to build the native binary.
 ``` bash
 native-image --report-unsupported-elements-at-runtime \
              --initialize-at-build-time \
+             --no-server \
              -jar ./target/hello-world-0.1.0-SNAPSHOT-standalone.jar \
              -H:Name=./target/hello-world
 
-Build on Server(pid: 76573, port: 63429)*
-[./target/hello-world:76573]    classlist:   2,931.41 ms
-[./target/hello-world:76573]        (cap):   2,494.11 ms
-[./target/hello-world:76573]        setup:   4,030.12 ms
-[./target/hello-world:76573]   (typeflow):   5,544.43 ms
-[./target/hello-world:76573]    (objects):   2,177.19 ms
-[./target/hello-world:76573]   (features):     225.10 ms
-[./target/hello-world:76573]     analysis:   8,098.25 ms
-[./target/hello-world:76573]     (clinit):     136.48 ms
-[./target/hello-world:76573]     universe:     399.00 ms
-[./target/hello-world:76573]      (parse):   1,106.76 ms
-[./target/hello-world:76573]     (inline):   1,968.59 ms
-[./target/hello-world:76573]    (compile):   9,156.00 ms
-[./target/hello-world:76573]      compile:  12,728.30 ms
-[./target/hello-world:76573]        image:     975.56 ms
-[./target/hello-world:76573]        write:     252.32 ms
-[./target/hello-world:76573]      [total]:  29,587.34 ms
+[./target/hello-world:33840]    classlist:   3,119.60 ms,  0.96 GB
+[./target/hello-world:33840]        (cap):   2,250.97 ms,  0.96 GB
+[./target/hello-world:33840]        setup:   3,980.23 ms,  0.96 GB
+[./target/hello-world:33840]     (clinit):     163.43 ms,  1.72 GB
+[./target/hello-world:33840]   (typeflow):   6,249.38 ms,  1.72 GB
+[./target/hello-world:33840]    (objects):   4,975.02 ms,  1.72 GB
+[./target/hello-world:33840]   (features):     202.49 ms,  1.72 GB
+[./target/hello-world:33840]     analysis:  11,819.61 ms,  1.72 GB
+[./target/hello-world:33840]     universe:     341.69 ms,  1.72 GB
+[./target/hello-world:33840]      (parse):   1,850.44 ms,  1.72 GB
+[./target/hello-world:33840]     (inline):   2,497.03 ms,  1.72 GB
+[./target/hello-world:33840]    (compile):  12,415.94 ms,  2.35 GB
+[./target/hello-world:33840]      compile:  17,341.60 ms,  2.35 GB
+[./target/hello-world:33840]        image:   1,197.96 ms,  2.35 GB
+[./target/hello-world:33840]        write:     643.75 ms,  2.35 GB
+[./target/hello-world:33840]      [total]:  38,716.97 ms,  2.35 GB
 ```
 
 That's it! now you can test your native binary!
@@ -170,7 +181,7 @@ Now you can add an alias for it the `project.clj itself:
   {"native"
    ["shell"
     "native-image" "--report-unsupported-elements-at-runtime"
-    "--initialize-at-build-time"
+    "--initialize-at-build-time" "--no-server"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
     "-H:Name=./target/${:name}"]}
 ```
@@ -192,7 +203,7 @@ Overall your `project.clj` should look like as follow:
   {"native"
    ["shell"
     "native-image" "--report-unsupported-elements-at-runtime"
-    "--initialize-at-build-time"
+    "--initialize-at-build-time" "--no-server"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
     "-H:Name=./target/${:name}"]}
   )
@@ -202,24 +213,26 @@ With this in place you can just run `lein native` to build the native binary:
 
 ``` bash
 $ lein native
-Build on Server(pid: 76573, port: 63429)
-[./target/hello-world:76573]    classlist:     925.69 ms
-[./target/hello-world:76573]        (cap):   1,052.47 ms
-[./target/hello-world:76573]        setup:   1,416.62 ms
-[./target/hello-world:76573]   (typeflow):   3,499.51 ms
-[./target/hello-world:76573]    (objects):   1,224.39 ms
-[./target/hello-world:76573]   (features):     129.42 ms
-[./target/hello-world:76573]     analysis:   4,946.87 ms
-[./target/hello-world:76573]     (clinit):      95.94 ms
-[./target/hello-world:76573]     universe:     298.63 ms
-[./target/hello-world:76573]      (parse):     622.46 ms
-[./target/hello-world:76573]     (inline):   1,119.10 ms
-[./target/hello-world:76573]    (compile):   4,646.36 ms
-[./target/hello-world:76573]      compile:   6,730.73 ms
-[./target/hello-world:76573]        image:     672.79 ms
-[./target/hello-world:76573]        write:     199.98 ms
-[./target/hello-world:76573]      [total]:  15,268.99 ms
+OpenJDK 64-Bit Server VM warning: forcing TieredStopAtLevel to full optimization because JVMCI is enabled
+[./target/hello-world:33980]    classlist:   2,970.75 ms,  0.96 GB
+[./target/hello-world:33980]        (cap):   2,824.32 ms,  0.96 GB
+[./target/hello-world:33980]        setup:   4,532.29 ms,  0.96 GB
+[./target/hello-world:33980]     (clinit):     180.49 ms,  1.72 GB
+[./target/hello-world:33980]   (typeflow):   6,960.70 ms,  1.72 GB
+[./target/hello-world:33980]    (objects):   4,050.59 ms,  1.72 GB
+[./target/hello-world:33980]   (features):     267.73 ms,  1.72 GB
+[./target/hello-world:33980]     analysis:  11,822.33 ms,  1.72 GB
+[./target/hello-world:33980]     universe:     322.57 ms,  1.72 GB
+[./target/hello-world:33980]      (parse):   1,758.44 ms,  1.72 GB
+[./target/hello-world:33980]     (inline):   2,497.64 ms,  1.72 GB
+[./target/hello-world:33980]    (compile):  12,186.63 ms,  2.35 GB
+[./target/hello-world:33980]      compile:  17,039.18 ms,  2.35 GB
+[./target/hello-world:33980]        image:   1,252.06 ms,  2.35 GB
+[./target/hello-world:33980]        write:     430.08 ms,  2.35 GB
+[./target/hello-world:33980]      [total]:  38,668.99 ms,  2.35 GB
 
 $ ./target/hello-world
 Hello, World!
 ```
+
+Happy hacking!

@@ -44,42 +44,4 @@ building a native image with Netty.
 
 Additionally:
 
- - Native image compilation fails with **GraalVM-CE-Java11-20.0.0** but works with **GraalVM-CE-Java8-20.0.0**.
- this is the error message:
-```
- Caused by: com.oracle.graal.pointsto.constraints.UnsupportedFeatureException: No instances of java.io.FilePermission are allowed in the image heap as this class should be initialized at image runtime. To see how this object got instantiated use -H:+TraceClassInitialization.
-Detailed message:
-Trace: Object was reached by
-	reading field java.util.concurrent.ConcurrentHashMap$Node.val of
-		constant java.util.concurrent.ConcurrentHashMap$Node@e542855d reached by
-	indexing into array
-		constant java.util.concurrent.ConcurrentHashMap$Node[]@6547c011 reached by
-	reading field java.util.concurrent.ConcurrentHashMap.table of
-		constant java.util.concurrent.ConcurrentHashMap@e542855d reached by
-	reading field java.io.FilePermissionCollection.perms of
-		constant java.io.FilePermissionCollection@733c1c92 reached by
-	reading field java.util.concurrent.ConcurrentHashMap$Node.val of
-		constant java.util.concurrent.ConcurrentHashMap$Node@25c17b8c reached by
-	indexing into array
-		constant java.util.concurrent.ConcurrentHashMap$Node[]@1e34f8ee reached by
-	reading field java.util.concurrent.ConcurrentHashMap.table of
-		constant java.util.concurrent.ConcurrentHashMap@25c17b8c reached by
-	reading field java.security.Permissions.permsMap of
-		constant java.security.Permissions@4c99021a reached by
-	reading field java.security.ProtectionDomain.permissions of
-		constant java.security.ProtectionDomain@5785676d reached by
-	indexing into array
-		constant java.security.ProtectionDomain[]@7a1bf7a6 reached by
-	reading field java.security.AccessControlContext.context of
-		constant java.security.AccessControlContext@5785676d reached by
-	reading field java.net.URLClassLoader.acc of
-		constant clojure.lang.DynamicClassLoader@43e12bef reached by
-	reading field java.lang.Class.classLoader of
-		constant java.lang.Class@1cf8be3b reached by
-	Hub
-
-	at com.oracle.graal.pointsto.constraints.UnsupportedFeatures.report(UnsupportedFeatures.java:126)
-	at com.oracle.svm.hosted.NativeImageGenerator.runPointsToAnalysis(NativeImageGenerator.java:738)
-	... 8 more
-Error: Image build request failed with exit status 1
-```
+ - Native image compilation works with **GraalVM-CE-Java11-20.1.0** and **GraalVM-CE-Java8-20.0.0**.

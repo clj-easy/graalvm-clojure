@@ -12,28 +12,32 @@ Here the instructions on how to build your own Clojure projects with GraalVM.
 
 Here the list of libraries tested:
 
-| Status             | Library                                              | Description                                            | Remarks                       |
-|:------------------:|------------------------------------------------------|--------------------------------------------------------|-------------------------------|
-| :white_check_mark: | [Clojure core](./clojure)                            |                                                        | works without Specs           |
-| :white_check_mark: | [clojure/tools.logging](./tools-logging)             | Logging library                                        |                               |
-| :white_check_mark: | [clojure/tools.logging+log4j](./tools-logging-log4j) | Logging library                                        |                               |
-| :white_check_mark: | [aleph](./aleph)                                     | Web server                                             |                               |
-| :x:                | [amazonica+s3](./amazonica-s3)                       | Cloud API wrapper library                              | *Buildtime and Runtime error* |
-| :white_check_mark: | [cheshire](./cheshire)                               | JSON parser/writer                                     |                               |
-| :white_check_mark: | [clj-http-lite](./clj-http-lite)                             | Web client                             |                               |
-| :x:                | [clj-sophia](./clj-sophia)                           | A fast RAM-Disk hybrid storage                         | *Runtime error/JNA*           |
-| :white_check_mark: | [clj-uuid](./clj-uuid)       | RFC4122 Unique Identifiers for Clojure  | No objects in namespaced uuids |
-| :white_check_mark: | [clostache](./clostache)                             | {{ mustache }} for Clojure                             |                               |
-| :question:         | cognitect/aws-api+s3                                 | Cloud API library                                      |                               |
-| :white_check_mark: | [datascript](./datascript)                           | Immutable database and Datalog query engine            |                               |
-| :white_check_mark: | [hiccup](./hiccup)                                   | Fast library for rendering HTML in Clojure             |                               |
-| :white_check_mark: | [http-kit](./http-kit)                               | Web server                                             | *Web client :x:*              |
-| :x:                | [monger](./monger)                                   | An idiomatic Clojure MongoDB driver with sane defaults |                               |
-| :white_check_mark: | [next.jdbc + honeysql](./next-jdbc)                  | Database driver and SQL-in-Clojure                     |                               |
-| :warning:          | [nippy](./nippy)                                     | Clojure serialization/deserialization library          | *Can't serialize exceptions*  |
-| :x:                | [ring/jetty](./ring-jetty)                           | Web server                                             | *Runtime error*               |
-| :white_check_mark: | [safely](./safely)                                   | Circuit breaker                                        |                               |
-| :white_check_mark: | [secure-random](./secure-random)                     | `SecureRandom` initialization                          |                               |
+| Status             | Library                                              | Description                                            | Remarks                        |
+|:------------------:|------------------------------------------------------|--------------------------------------------------------|--------------------------------|
+| :white_check_mark: | [Clojure core](./clojure)                            | Clojure core                                           |                                |
+| :white_check_mark: | [clojure spec](./spec)                               | Clojure Spec                                           |                                |
+| :white_check_mark: | [clojure/tools.logging](./tools-logging)             | Logging library                                        |                                |
+| :white_check_mark: | [clojure/tools.logging+log4j](./tools-logging-log4j) | Logging library                                        |                                |
+| :white_check_mark: | [aleph](./aleph)                                     | Web server                                             |                                |
+| :white_check_mark: | [amazonica+s3](./amazonica-s3)                       | Cloud API wrapper library                              |                                |
+| :white_check_mark: | [cheshire](./cheshire)                               | JSON parser/writer                                     |                                |
+| :white_check_mark: | [clj-http-lite](./clj-http-lite)                     | Web client                                             |                                |
+| :x:                | [clj-sophia](./clj-sophia)                           | A fast RAM-Disk hybrid storage                         | *Runtime error/JNA*            |
+| :white_check_mark: | [clj-uuid](./clj-uuid)                               | RFC4122 Unique Identifiers for Clojure                 | No objects in namespaced uuids |
+| :white_check_mark: | [clostache](./clostache)                             | {{ mustache }} for Clojure                             |                                |
+| :x:                | [cognitect/aws-api+s3](./aws-api-s3)                 | Cloud API library                                      | *Buildtime error*              |
+| :white_check_mark: | [component](./component)                             | Managing lifecycle and dependencies of software        |                                |
+| :white_check_mark: | [datascript](./datascript)                           | Immutable database and Datalog query engine            |                                |
+| :warning:          | [fastmath](./fastmath)                               | Fast and primitive math and stats library              | *See README*                   |
+| :white_check_mark: | [hiccup](./hiccup)                                   | Fast library for rendering HTML in Clojure             |                                |
+| :white_check_mark: | [http-kit](./http-kit)                               | Web server                                             | *Web client :x:*               |
+| :x:                | [monger](./monger)                                   | An idiomatic Clojure MongoDB driver with sane defaults |                                |
+| :white_check_mark: | [next.jdbc + honeysql](./next-jdbc)                  | Database driver and SQL-in-Clojure                     |                                |
+| :warning:          | [nippy](./nippy)                                     | Clojure serialization/deserialization library          | *Can't serialize exceptions*   |
+| :white_check_mark: | [ring/jetty](./ring-jetty)                           | Web server                                             |                                |
+| :white_check_mark: | [safely](./safely)                                   | Circuit breaker                                        |                                |
+| :white_check_mark: | [secure-random](./secure-random)                     | `SecureRandom` initialization                          |                                |
+| :x:                | [system](./system)                                   | Layer on top of components                             | *Buildtime error, see Readme*  |
 
 
 More libraries to come (*PRs are welcome*).

@@ -61,3 +61,44 @@ throws the following exception:
         at clojure.lang.AFn.applyToHelper(AFn.java:152)
         at clojure.lang.AFn.applyTo(AFn.java:144)
         at simple.main.main(Unknown Source)
+
+This is mainly due to the use of `(Class/forName class-name)` in Nippy as described [here](https://github.com/ptaoussanis/nippy/issues/129).
+However after fixing this issue, the next exception I get is the following
+
+``` text
+Exception in thread "main" com.oracle.svm.core.jdk.UnsupportedFeatureError: ObjectOutputStream.writeObject()
+	at com.oracle.svm.core.util.VMError.unsupportedFeature(VMError.java:86)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:68)
+	at taoensso.nippy.utils$fn__2429$test_fn__2430.invoke(utils.clj:30)
+	at taoensso.nippy.utils$fn__2415$memoize_type_test__2416$fn__2417$test__2418.invoke(utils.clj:18)
+	at taoensso.nippy.utils$fn__2415$memoize_type_test__2416$fn__2417$fn__2420$fn__2421.invoke(utils.clj:20)
+	at clojure.lang.Delay.deref(Delay.java:42)
+	at clojure.core$deref.invokeStatic(core.clj:2320)
+	at clojure.core$deref.invoke(core.clj:2306)
+	at taoensso.nippy.utils$fn__2415$memoize_type_test__2416$fn__2417.invoke(utils.clj:19)
+	at taoensso.nippy.utils$fn__2429$fn__2432.invoke(utils.clj:43)
+	at taoensso.nippy$try_write_serializable.invokeStatic(nippy.clj:715)
+	at taoensso.nippy$try_write_serializable.invoke(nippy.clj:714)
+	at taoensso.nippy$fn__3098.invokeStatic(nippy.clj:960)
+	at taoensso.nippy$fn__3098.invoke(nippy.clj:948)
+	at taoensso.nippy$fn__2886$G__2881__2893.invoke(nippy.clj:332)
+	at taoensso.nippy$fn__2921.invokeStatic(nippy.clj:349)
+	at taoensso.nippy$fn__2921.invoke(nippy.clj:334)
+	at taoensso.nippy$fn__2904$G__2899__2911.invoke(nippy.clj:333)
+	at taoensso.nippy$freeze$fn__3124.invoke(nippy.clj:1026)
+	at taoensso.nippy$freeze.invokeStatic(nippy.clj:1026)
+	at taoensso.nippy$freeze.invoke(nippy.clj:1002)
+	at taoensso.nippy$freeze.invokeStatic(nippy.clj:1005)
+	at taoensso.nippy$freeze.invoke(nippy.clj:1002)
+	at simple.main$_main.invokeStatic(main.clj:31)
+	at simple.main$_main.invoke(main.clj:30)
+	at clojure.lang.AFn.applyToHelper(AFn.java:152)
+	at clojure.lang.AFn.applyTo(AFn.java:144)
+	at simple.main.main(Unknown Source)
+```
+
+Which as explained [here](https://github.com/oracle/graal/issues/460)
+is due to the fact that Java Serialization is not supported yet!.
+
+So it looks like you can use Nippy with GraalVM on all Clojure values
+but Java Object serialization isn't supported yet.

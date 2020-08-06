@@ -3,7 +3,6 @@
   (:gen-class))
 
 
-(def s3 (aws/client {:api :s3}))
-
 (defn -main []
-  (prn (aws/invoke s3 {:op :ListBuckets})))
+  (let [s3 (aws/client {:api :s3})]
+    (prn (aws/invoke s3 {:op :ListBuckets}))))
