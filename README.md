@@ -37,6 +37,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [ring/jetty](./ring-jetty)                           | Web server                                             |                                |
 | :white_check_mark: | [safely](./safely)                                   | Circuit breaker                                        |                                |
 | :white_check_mark: | [secure-random](./secure-random)                     | `SecureRandom` initialization                          |                                |
+| :white_check_mark: | [selmer](./selmer)                                   | A fast, Django inspired template system for Clojure.                          |                                |
 | :x:                | [system](./system)                                   | Layer on top of components                             | *Buildtime error, see Readme*  |
 
 
