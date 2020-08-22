@@ -6,7 +6,7 @@ Testing whether [http-kit](https://github.com/http-kit/http-kit) library can be 
 
 Currently testing:
 
-    [http-kit "2.3.0"]
+    [http-kit "2.5.0-alpha1"]
 
 Test with:
 

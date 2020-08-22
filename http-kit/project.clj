@@ -1,8 +1,7 @@
-(defproject sample-project "0.1.0-SNAPSHOT"
+(defproject http-kit "0.1.0-SNAPSHOT"
 
   :dependencies [[org.clojure/clojure "1.10.1"]
-                 [http-kit "2.3.0"]
-                 ]
+                 [http-kit "2.5.0-alpha1"]]
 
   :main simple.main
 
@@ -14,7 +13,9 @@
   :aliases
   {"native"
    ["shell"
-    "native-image" "--report-unsupported-elements-at-runtime" "--no-server"
+    "native-image" 
+    "--report-unsupported-elements-at-runtime" 
+    "--no-server"
     "--initialize-at-build-time"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
     "-H:Name=./target/${:name}"]
