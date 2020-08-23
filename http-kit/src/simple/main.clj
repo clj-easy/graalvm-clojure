@@ -4,7 +4,7 @@
   (:gen-class))
 
 (defn handler
-  [request]
+  [_]
   {:status 200
    :headers {"Content-Type" "text/html"}
    :body "Hello GraalVM"})
