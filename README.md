@@ -30,7 +30,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [datascript](./datascript)                           | Immutable database and Datalog query engine            |                                |
 | :warning:          | [fastmath](./fastmath)                               | Fast and primitive math and stats library              | *See README*                   |
 | :white_check_mark: | [hiccup](./hiccup)                                   | Fast library for rendering HTML in Clojure             |                                |
-| :white_check_mark: | [http-kit](./http-kit)                               | Web server                                             | *Web client :x:*               |
+| :white_check_mark: | [http-kit](./http-kit)                               | Web server and server                                            |                |
 | :x:                | [monger](./monger)                                   | An idiomatic Clojure MongoDB driver with sane defaults |                                |
 | :white_check_mark: | [next.jdbc + honeysql](./next-jdbc)                  | Database driver and SQL-in-Clojure                     |                                |
 | :warning:          | [nippy](./nippy)                                     | Clojure serialization/deserialization library          | *Can't serialize exceptions*   |
