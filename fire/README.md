@@ -14,9 +14,11 @@ Test with:
 
     docker-compose up -d
     lein do clean, uberjar, native, run-native
-    docker-compose down
+
+    docker-compose down 
 
 ## Results
 
 `[fire.core :as fire]` :white_check_mark:
 `[fire.auth :as auth]` :white_check_mark:
+
