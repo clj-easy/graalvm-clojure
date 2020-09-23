@@ -29,6 +29,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [component](./component)                             | Managing lifecycle and dependencies of software        |                                |
 | :white_check_mark: | [datascript](./datascript)                           | Immutable database and Datalog query engine            |                                |
 | :warning:          | [fastmath](./fastmath)                               | Fast and primitive math and stats library              | *See README*                   |
+| :white_check_mark: | [fire](./fire)                                       | A lightweight clojure client for Firebase based using the REST API.  |     |
 | :white_check_mark: | [hiccup](./hiccup)                                   | Fast library for rendering HTML in Clojure             |                                |
 | :white_check_mark: | [http-kit](./http-kit)                               | Web server and server                                            |                |
 | :x:                | [monger](./monger)                                   | An idiomatic Clojure MongoDB driver with sane defaults |                                |

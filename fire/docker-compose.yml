@@ -1,0 +1,6 @@
+version: '3'
+services:
+  database:
+    image: "thainaribeiro/firebase-emulator-database" #
+    ports:
+      - "9000:9000"
