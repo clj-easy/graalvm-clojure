@@ -27,6 +27,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [clostache](./clostache)                             | {{ mustache }} for Clojure                                          |                                |
 | :x:                | [cognitect/aws-api+s3](./aws-api-s3)                 | Cloud API library                                                   | *Buildtime error*              |
 | :white_check_mark: | [component](./component)                             | Managing lifecycle and dependencies of software                     |                                |
+| :white_check_mark: | [cprop](./cprop)                                     | Configuration/property management                                   |                                |
 | :white_check_mark: | [datascript](./datascript)                           | Immutable database and Datalog query engine                         |                                |
 | :warning:          | [fastmath](./fastmath)                               | Fast and primitive math and stats library                           | *See README*                   |
 | :white_check_mark: | [fire](./fire)                                       | A lightweight clojure client for Firebase based using the REST API. |                                |
