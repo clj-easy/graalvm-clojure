@@ -1,0 +1,11 @@
+{:datomic
+ {:url "datomic:sql://?jdbc:postgresql://localhost:5432/datomic?user=datomic&password=datomic"}
+ :source
+ {:account
+  {:rabbit
+   {:host "127.0.0.1"
+    :port 5672
+    :vhost "/z-broker"
+    :username "guest"
+    :password "guest"}}}
+ :answer 42}
