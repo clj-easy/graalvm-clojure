@@ -10,6 +10,25 @@ Currently testing:
     [com.cognitect.aws/endpoints "1.1.11.537"]
     [com.cognitect.aws/s3        "714.2.430.0"]
 
+Gotchas:
+
+`aws-api` uses
+[`dynaload`](https://github.com/cognitect-labs/aws-api/blob/master/src/cognitect/aws/dynaload.clj)
+to load dynamically resources and protocols at runtime. Avoid as much
+as you can the use of `dynaload` by pre-loading the required
+resources.
+
+For example if during the compilation with `native-image` you see a bunch of WARNING messages like:
+
+```
+WARNING: Could not resolve cognitect.aws.protocols.rest_xml$eval151 for reflection configuration.
+```
+
+Then just require the namespace directly (see `simple.main`)
+
+Finally, you need to pre-create a `http-client` for the same reason and pass it to all your
+aws clients. For this you can use Clojure's `delay`, to ensure runtime initialization.
+
 Test with:
 
-    lein do clean, uberjar, native, run-native
+    lein do clean, uberjar, native-config, native, run-native
