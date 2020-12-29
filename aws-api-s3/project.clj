@@ -25,7 +25,6 @@
     "-H:ConfigurationFileDirectories=./target/config/"
     "--initialize-at-build-time"
     "--allow-incomplete-classpath"
-    "--initialize-at-run-time=com.amazonaws.auth.DefaultAWSCredentialsProviderChain"
     "--enable-http" "--enable-https" "--enable-all-security-services"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
     "-H:Name=./target/${:name}"]
