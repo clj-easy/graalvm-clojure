@@ -1,7 +1,7 @@
 (def graalvm-home (System/getenv "GRAALVM_HOME"))
 
 (defproject sample-project "0.1.0-SNAPSHOT"
-  :dependencies [[org.clojure/clojure "1.10.1"]
+  :dependencies [[org.clojure/clojure "1.10.2-rc1"]
                  ;; add the library here
                  ]
   :main simple.main
