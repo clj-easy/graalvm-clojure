@@ -2,6 +2,8 @@
 
 Testing whether [hiccup](https://github.com/weavejester/hiccup) library can be used in a native binary image with GraalVM.
 
+*Note: it works only with static input* (see: https://github.com/BrunoBonacci/graalvm-clojure/issues/33)
+
 ## Usage
 
 Currently testing:
