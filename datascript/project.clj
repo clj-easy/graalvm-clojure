@@ -1,8 +1,7 @@
 (defproject datascript "0.1.0-SNAPSHOT"
 
-  :dependencies [[org.clojure/clojure "1.9.0"]
-                 [datascript "0.18.10"]
-                 ]
+  :dependencies [[org.clojure/clojure "1.10.2"]
+                 [datascript "1.0.3"]]
 
   :main simple.main
 
