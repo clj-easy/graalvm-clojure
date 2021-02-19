@@ -1,7 +1,7 @@
 (defproject http-kit "0.1.0-SNAPSHOT"
 
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [http-kit "2.5.0-alpha2"]]
+                 [http-kit "2.5.2"]]
 
   :main simple.main
 
@@ -13,11 +13,12 @@
   :aliases
   {"native"
    ["shell"
-    "native-image" 
-    "--report-unsupported-elements-at-runtime" 
+    "native-image"
+    "--report-unsupported-elements-at-runtime"
     "--no-server"
     "--allow-incomplete-classpath"
     "--initialize-at-build-time"
+    "--initialize-at-run-time=org.httpkit.client.ClientSslEngineFactory\\$SSLHolder"
     "--enable-url-protocols=http,https"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
     "-H:Name=./target/${:name}"]
