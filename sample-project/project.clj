@@ -1,6 +1,6 @@
 (defproject sample-project "0.1.0-SNAPSHOT"
 
-  :dependencies [[org.clojure/clojure "1.10.1"]
+  :dependencies [[org.clojure/clojure "1.10.3"]
                  ;; add the library here
                  ]
 
@@ -14,7 +14,7 @@
   :aliases
   {"native"
    ["shell"
-    "native-image" "--report-unsupported-elements-at-runtime" "--no-server"
+    "native-image" "--report-unsupported-elements-at-runtime" "--no-server" "--no-fallback"
     "--initialize-at-build-time"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
     "-H:Name=./target/${:name}"]
