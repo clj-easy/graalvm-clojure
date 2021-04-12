@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ ! -e graalvm ]; then
+    scripts/get-graal
+fi
+
+export GRAALVM_HOME="$(pwd)/graalvm"
+export PATH="$(pwd)/graalvm/bin:$PATH"
+export JAVA_HOME="$(pwd)/graalvm"
