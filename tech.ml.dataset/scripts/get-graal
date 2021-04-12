@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+GRAAL_VERSION="21.0.0.2"
+JDK_VERSION="11"
+
+wget https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$GRAAL_VERSION/graalvm-ce-java$JDK_VERSION-linux-amd64-$GRAAL_VERSION.tar.gz
+tar -xvzf graalvm-ce-java$JDK_VERSION-linux-amd64-$GRAAL_VERSION.tar.gz
+ln -s "$(pwd)/graalvm-ce-java$JDK_VERSION-$GRAAL_VERSION" "$(pwd)/graalvm"
+rm graalvm-ce-java$JDK_VERSION-linux-amd64-$GRAAL_VERSION.tar.gz
+graalvm/bin/gu install native-image
+
+## Dev builds
+
+# wget https://github.com/graalvm/graalvm-ce-dev-builds/releases/download/21.1.0-dev-20210325_0249/graalvm-ce-java16-linux-amd64-dev.tar.gz
+# tar -xvzf graalvm-ce-java16-linux-amd64-dev.tar.gz
+# ln -s "$(pwd)/graalvm-ce-java16-21.1.0-dev" "$(pwd)/graalvm"
+# rm -f graalvm-ce-java16-linux-amd64-dev.tar.gz
+# graalvm/bin/gu install native-image

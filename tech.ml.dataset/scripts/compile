@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -e
+
+source scripts/activate-graal
+
+rm -rf classes && mkdir classes
+echo "Building uberjar"
+clojure -X:depstar
+
+
+graalvm/bin/native-image \
+    --report-unsupported-elements-at-runtime \
+    --initialize-at-build-time \
+    --no-fallback \
+    --no-server \
+    -H:+ReportExceptionStackTraces \
+    --enable-https \
+    --allow-incomplete-classpath \
+    --initialize-at-run-time=org.apache.hadoop.util.DataChecksum$Java9Crc32CFactory \
+    --initialize-at-run-time=org.apache.hadoop.io.erasurecode.rawcoder.NativeRSRawDecoder \
+    --initialize-at-run-time=org.apache.hadoop.io.erasurecode.rawcoder.NativeRSRawEncoder \
+    --initialize-at-run-time=org.apache.hadoop.io.erasurecode.rawcoder.NativeXORRawEncoder \
+    --initialize-at-run-time=org.apache.hadoop.io.erasurecode.rawcoder.NativeXORRawDecoder \
+    -J-Dclojure.spec.skip-macros=true \
+    -J-Dclojure.compiler.direct-linking=true \
+    -J-Dtech.v3.datatype.graal-native=true \
+    -jar target/hello-tmd.jar hello-tmd
