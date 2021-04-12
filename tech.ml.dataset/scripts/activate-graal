@@ -1,9 +1,15 @@
 #!/bin/bash
 
-if [ ! -e graalvm ]; then
-    scripts/get-graal
-fi
+# switch to graalvm if not used
+if test java -version 2>&1 | grep -q GraalVM ; then
 
-export GRAALVM_HOME="$(pwd)/graalvm"
-export PATH="$(pwd)/graalvm/bin:$PATH"
-export JAVA_HOME="$(pwd)/graalvm"
+    # download graalvm if not installed
+    if [ ! -e graalvm ]; then
+        scripts/get-graal
+    fi
+
+    export GRAALVM_HOME="$(pwd)/graalvm"
+    export PATH="$(pwd)/graalvm/bin:$PATH"
+    export JAVA_HOME="$(pwd)/graalvm"
+
+fi

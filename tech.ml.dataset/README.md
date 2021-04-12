@@ -16,5 +16,5 @@ scripts/compile
 ## Running
 
 ```console
-./ds-graal
+./target/hello-tmd
 ```

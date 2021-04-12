@@ -4,12 +4,12 @@ set -e
 
 source scripts/activate-graal
 
-rm -rf classes && mkdir classes
+rm -rf classes target && mkdir classes
 echo "Building uberjar"
 clojure -X:depstar
 
 
-graalvm/bin/native-image \
+native-image \
     --report-unsupported-elements-at-runtime \
     --initialize-at-build-time \
     --no-fallback \
@@ -25,4 +25,4 @@ graalvm/bin/native-image \
     -J-Dclojure.spec.skip-macros=true \
     -J-Dclojure.compiler.direct-linking=true \
     -J-Dtech.v3.datatype.graal-native=true \
-    -jar target/hello-tmd.jar hello-tmd
+    -jar target/hello-tmd.jar ./target/hello-tmd
