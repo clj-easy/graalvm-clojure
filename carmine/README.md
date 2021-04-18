@@ -1,6 +1,6 @@
 # carmine
 
-Project to test if (carmine)[https://github.com/ptaoussanis/carmine] can be used in a native binary image with GraalVM.
+Project to test if [carmine](https://github.com/ptaoussanis/carmine) can be used in a native binary image with GraalVM.
 
 ## Usage
 
