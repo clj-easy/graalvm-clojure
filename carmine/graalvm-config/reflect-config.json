@@ -1,0 +1,6 @@
+[
+  {
+    "name":"org.apache.commons.pool2.impl.DefaultEvictionPolicy",
+    "allPublicConstructors" : true
+  }
+]

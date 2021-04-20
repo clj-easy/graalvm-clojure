@@ -17,7 +17,8 @@
     "native-image" "--report-unsupported-elements-at-runtime" "--no-server" "--no-fallback"
     "--initialize-at-build-time"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
-    "-H:Name=./target/${:name}"]
+    "-H:Name=./target/${:name}"
+    "-H:ConfigurationFileDirectories=./graalvm-config/"]
 
    "run-native" ["shell" "./target/${:name}"]})
 
