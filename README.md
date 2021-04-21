@@ -21,7 +21,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [aleph](./aleph)                                     | Web server                                                          |                                |
 | :white_check_mark: | [amazonica+s3](./amazonica-s3)                       | Cloud API wrapper library                                           |                                |
 | :white_check_mark: | [aws-api+s3](./aws-api-s3)                           | Cognitect AWS client library                                        |                                |
-| :white_check_mark: | [carmine](./carmine)                                 | Redis client and message queue for Clojure                          | *Needs reflection configuration, see Readme*|
+| :white_check_mark: | [carmine](./carmine)                                 | Redis client and message queue for Clojure                          |                                |
 | :white_check_mark: | [cheshire](./cheshire)                               | JSON parser/writer                                                  |                                |
 | :white_check_mark: | [clj-http-lite](./clj-http-lite)                     | Web client                                                          |                                |
 | :x:                | [clj-sophia](./clj-sophia)                           | A fast RAM-Disk hybrid storage                                      | *Runtime error/JNA*            |
