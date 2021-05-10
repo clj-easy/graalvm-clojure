@@ -23,6 +23,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [aws-api+s3](./aws-api-s3)                           | Cognitect AWS client library                                        |                                |
 | :white_check_mark: | [carmine](./carmine)                                 | Redis client and message queue for Clojure                          |                                |
 | :white_check_mark: | [cheshire](./cheshire)                               | JSON parser/writer                                                  |                                |
+| :white_check_mark: | [cljfmt](./cljfmt)                                   | Source Formatter                                                    |                                |
 | :white_check_mark: | [clj-http-lite](./clj-http-lite)                     | Web client                                                          |                                |
 | :x:                | [clj-sophia](./clj-sophia)                           | A fast RAM-Disk hybrid storage                                      | *Runtime error/JNA*            |
 | :white_check_mark: | [clj-uuid](./clj-uuid)                               | RFC4122 Unique Identifiers for Clojure                              | No objects in namespaced uuids |
