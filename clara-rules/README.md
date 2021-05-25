@@ -39,5 +39,5 @@ Notify Alice that Acme has a new support request!
 ```
 
 Additionally:
-
-Native image compilation works with GraalVM-CE-Java11-20.1.0 and GraalVM-CE-Java8-20.0.0.
+- Native image compilation works with GraalVM-CE-Java11-20.1.0 and GraalVM-CE-Java8-20.0.0.
+- The session is precompiled via defsession so that it does not need to be compiled at runtime.
