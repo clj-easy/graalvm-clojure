@@ -20,6 +20,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [clojure/tools.logging+log4j](./tools-logging-log4j) | Logging library                                                     |                                |
 | :white_check_mark: | [aleph](./aleph)                                     | Web server                                                          |                                |
 | :white_check_mark: | [amazonica+s3](./amazonica-s3)                       | Cloud API wrapper library                                           |                                |
+| :white_check_mark: | [asami](./asami)                                     | Asami DB                                                            |                                |
 | :white_check_mark: | [aws-api+s3](./aws-api-s3)                           | Cognitect AWS client library                                        |                                |
 | :white_check_mark: | [carmine](./carmine)                                 | Redis client and message queue for Clojure                          |                                |
 | :white_check_mark: | [cheshire](./cheshire)                               | JSON parser/writer                                                  |                                |
@@ -28,6 +29,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [clj-http-lite](./clj-http-lite)                     | Web client                                                          |                                |
 | :x:                | [clj-sophia](./clj-sophia)                           | A fast RAM-Disk hybrid storage                                      | *Runtime error/JNA*            |
 | :white_check_mark: | [clj-uuid](./clj-uuid)                               | RFC4122 Unique Identifiers for Clojure                              | No objects in namespaced uuids |
+| :white_check_mark: | [clara-rules](./clara-rules)                         | A Clojure forward-chaining rules engine                             | *Using AOT compiled session*   |
 | :white_check_mark: | [clostache](./clostache)                             | {{ mustache }} for Clojure                                          |                                |
 | :white_check_mark: | [component](./component)                             | Managing lifecycle and dependencies of software                     |                                |
 | :white_check_mark: | [cprop](./cprop)                                     | Configuration/property management                                   |                                |
@@ -46,7 +48,6 @@ Here the list of libraries tested:
 | :white_check_mark: | [selmer](./selmer)                                   | A fast, Django inspired template system for Clojure.                |                                |
 | :x:                | [system](./system)                                   | Layer on top of components                                          | *Buildtime error, see Readme*  |
 | :white_check_mark: | [tech.ml.dataset](./tech.ml.dataset)                 | A Clojure high performance data processing system                   |                                |
-| :white_check_mark: | [clara-rules](./clara-rules)                         | A Clojure forward-chaining rules engine                             | *Using AOT compiled session*   |
 
 
 
