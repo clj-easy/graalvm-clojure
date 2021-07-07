@@ -48,7 +48,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [selmer](./selmer)                                   | A fast, Django inspired template system for Clojure.                |                                |
 | :x:                | [system](./system)                                   | Layer on top of components                                          | *Buildtime error, see Readme*  |
 | :white_check_mark: | [tech.ml.dataset](./tech.ml.dataset)                 | A Clojure high performance data processing system                   |                                |
-
+| :white_check_mark: | [timbre](./timbre)                                   | Pure Clojure/Script logging library                                 |           |
 
 
 More libraries to come (*PRs are welcome*).
