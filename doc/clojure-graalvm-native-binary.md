@@ -66,7 +66,7 @@ Update the `project.clj` and add the `:main`
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   ;; clojure version "1.10.2-alpha1" includes fixes for some graalvm specific issues
   ;; see https://clojure.org/community/devchangelog#_release_1_10_2
-  :dependencies [[org.clojure/clojure "1.10.2-alpha1"]]
+  :dependencies [[org.clojure/clojure "1.10.3"]]
   ;; add the main namespace
   :main hello-world.core
 
