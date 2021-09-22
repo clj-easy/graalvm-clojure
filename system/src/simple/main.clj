@@ -1,6 +1,7 @@
 (ns simple.main
-  (:require [simple.components :refer [prod-system]]
-           [system.repl :as sr])
+  (:require
+   [simple.components :refer [prod-system]]
+   [system.repl :as sr])
   (:gen-class))
 
 (defn -main []
