@@ -41,7 +41,7 @@ Here the list of libraries tested:
 | :x:                | [monger](./monger)                                   | An idiomatic Clojure MongoDB driver with sane defaults              |                                |
 | :white_check_mark: | [μ/log](./mulog)                                     | Event logging system                                                |                                |
 | :white_check_mark: | [next.jdbc + honeysql](./next-jdbc)                  | Database driver and SQL-in-Clojure                                  |                                |
-| :warning:          | [nippy](./nippy)                                     | Clojure serialization/deserialization library                       | *Can't serialize exceptions*   |
+| :white_check_mark: | [nippy](./nippy)                                     | Clojure serialization/deserialization library                       | |
 | :white_check_mark: | [ring/jetty](./ring-jetty)                           | Web server                                                          |                                |
 | :white_check_mark: | [safely](./safely)                                   | Circuit breaker                                                     |                                |
 | :white_check_mark: | [secure-random](./secure-random)                     | `SecureRandom` initialization                                       |                                |
