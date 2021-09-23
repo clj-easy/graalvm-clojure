@@ -49,6 +49,7 @@ Here the list of libraries tested:
 | :x:                | [system](./system)                                   | Layer on top of components                                          | *Buildtime error, see Readme*  |
 | :white_check_mark: | [tech.ml.dataset](./tech.ml.dataset)                 | A Clojure high performance data processing system                   |                                |
 | :white_check_mark: | [timbre](./timbre)                                   | Pure Clojure/Script logging library                                 |           |
+| :white_check_mark: | [integrant](./integrant)                             | Alternative to mount, component etc. |           |
 
 
 More libraries to come (*PRs are welcome*).
