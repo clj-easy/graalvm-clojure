@@ -38,18 +38,18 @@ Here the list of libraries tested:
 | :white_check_mark: | [fire](./fire)                                       | A lightweight clojure client for Firebase based using the REST API. |                                |
 | :white_check_mark: | [hiccup](./hiccup)                                   | Fast library for rendering HTML in Clojure                          |                                |
 | :white_check_mark: | [http-kit](./http-kit)                               | Web server and server                                               |                                |
+| :white_check_mark: | [integrant](./integrant)                             | Alternative to mount, component etc.                                |                                |
 | :x:                | [monger](./monger)                                   | An idiomatic Clojure MongoDB driver with sane defaults              |                                |
 | :white_check_mark: | [μ/log](./mulog)                                     | Event logging system                                                |                                |
 | :white_check_mark: | [next.jdbc + honeysql](./next-jdbc)                  | Database driver and SQL-in-Clojure                                  |                                |
-| :white_check_mark: | [nippy](./nippy)                                     | Clojure serialization/deserialization library                       | |
+| :white_check_mark: | [nippy](./nippy)                                     | Clojure serialization/deserialization library                       |                                |
 | :white_check_mark: | [ring/jetty](./ring-jetty)                           | Web server                                                          |                                |
 | :white_check_mark: | [safely](./safely)                                   | Circuit breaker                                                     |                                |
 | :white_check_mark: | [secure-random](./secure-random)                     | `SecureRandom` initialization                                       |                                |
 | :white_check_mark: | [selmer](./selmer)                                   | A fast, Django inspired template system for Clojure.                |                                |
-| :white_check_mark:             | [system](./system)                                   | Layer on top of components                                          |                                |
+| :white_check_mark: | [system](./system)                                   | Layer on top of components                                          |                                |
 | :white_check_mark: | [tech.ml.dataset](./tech.ml.dataset)                 | A Clojure high performance data processing system                   |                                |
-| :white_check_mark: | [timbre](./timbre)                                   | Pure Clojure/Script logging library                                 |           |
-| :white_check_mark: | [integrant](./integrant)                             | Alternative to mount, component etc. |           |
+| :white_check_mark: | [timbre](./timbre)                                   | Pure Clojure/Script logging library                                 |                                |
 
 
 More libraries to come (*PRs are welcome*).
