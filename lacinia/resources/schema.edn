@@ -1,0 +1,28 @@
+{:objects
+ {:Author
+  {:fields
+   {:id {:type (non-null ID)}
+    :first_name {:type (non-null String)}
+    :last_name {:type (non-null String)}
+    :from {:type Int
+           :description "Year of birth, if known."}
+    :until {:type Int
+            :description "Year of death, if applicable."}}}
+  :Book
+  {:fields
+   {:id {:type (non-null ID)}
+    :title {:type (non-null String)}
+    :authors {:type (non-null (list :Author))
+              :description "A book must have one or more authors."
+              :resolve :Book/authors}
+    :published {:type Int
+                :description "Year of first publication."}
+    :subject {:type (list String)
+             :resolve :Book/subject}}}}
+
+ :queries
+ {:book_by_id
+  {:type :Book
+   :args
+   {:id {:type ID}}
+   :resolve :query/book-by-id}}}

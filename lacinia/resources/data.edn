@@ -1,0 +1,70 @@
+{:books
+ [{:id "6a2b1cf-d34f-a316-d3aac3b24fca"
+   :title "Hello GraalVM"
+   :authors #{"5b5fa1c3-e220-da2c-2fcd-3dcc6709cf31b"}
+   :published 2021
+   :subject #{"JVM" "native-image"}}
+  {:id "d6c6d15-5f56-b216-1def461745ec"
+   :title "Design Patterns: Elements of Reusable Object-Oriented Software"
+   :authors #{"34ead153-123d-45e9-d153-089c6709cf3e" "afa5b6f1-344d-11e9-a414-719c6709cf3ee" "ef345def-dfe0-aee9-d153-abc5c6709cf3e" "bac09fef-d4e0-bcd9-f200-e345c6709cf5f"}
+   :published 1994
+   :subject #{"OOP" "patterns" "design"}}
+  {:id "5f56d15-b216-d6c6-5f3c647245f0"
+   :title "The Art of the Metaobject Protocol"
+   :authors #{"dc3e15e0-decd-0c2e-3cab-970c670902c23"}
+   :published 1991
+   :subject #{"Common Lisp" "patterns" "design"}}
+  {:id "f2e41dd-e1ff-a3cb-3c461a7245c1"
+   :title "Agile Software Development, Principles, Patterns, and Practices"
+   :authors #{"0c2e15e0-3cd1-c4d2-b4e1-23c670902ab1a"}
+   :published 2002
+   :subject #{"agile" "design"}}
+  {:id "f2e41dd-e1ff-a3cb-3c461a7245c1"
+   :title "Clean Code: A Handbook of Agile Software Craftsmanship"
+   :authors #{"0c2e15e0-3cd1-c4d2-b4e1-23c670902ab1a"}
+   :published 2008
+   :subject #{"refactoring" "design"}}
+  {:id "a414b6f0-afa5-11e9-430e-719c6709cf3e"
+   :title "The C Programming Language",
+   :authors #{"93fcd21d-a2d3-021d-c01a-3c54d6709cf0c" "f343a09a-2c3d-c10e-4bc2-c421d6709c2cb"}
+   :published 1978
+   :subject #{"ISO C" "systems" "language specification"}}]
+
+ :authors
+ [{:id "34ead153-123d-45e9-d153-089c6709cf3e"
+   :first_name "Erich"
+   :last_name "Gamma"
+   :from 1961}
+  {:id "0c2e15e0-3cd1-c4d2-b4e1-23c670902ab1a"
+   :first_name "Robert"
+   :last_name "Martin"
+   :from 1952}
+  {:id "dc3e15e0-decd-0c2e-3cab-970c670902c23"
+   :first_name "Gregor"
+   :last_name "Kiczales"
+   :from 1961}
+  {:id "afa5b6f1-344d-11e9-a414-719c6709cf3ee"
+   :first_name "Richard"
+   :last_name "Helm"}
+  {:id "ef345def-dfe0-aee9-d153-abc5c6709cf3e"
+   :first_name "Ralph"
+   :last_name "Johnson"
+   :from 1955}
+  {:id "bac09fef-d4e0-bcd9-f200-e345c6709cf5f"
+   :first_name "John"
+   :last_name "Vlissides"
+   :from 1961
+   :until 2005}
+  {:id "93fcd21d-a2d3-021d-c01a-3c54d6709cf0c"
+   :first_name "Brian"
+   :last_name "Kernighan"
+   :from 1942}
+  {:id "f343a09a-2c3d-c10e-4bc2-c421d6709c2cb"
+   :first_name "Dennis"
+   :last_name "Ritchie"
+   :from 1941
+   :until 2011}
+  {:id "5b5fa1c3-e220-da2c-2fcd-3dcc6709cf31b"
+   :first_name "Oracle"
+   :last_name "Corporation"
+   :from 1995}]}
