@@ -12,7 +12,6 @@ Test with:
 
     lein do clean, uberjar, native, run-native
 
+If you want to avoid the warning about `--initialize-at-build-time` try with:
 
-Test with:
-
-    lein do clean, uberjar, native, run-native
+    lein do clean, uberjar+graal-build-time, native, run-native
