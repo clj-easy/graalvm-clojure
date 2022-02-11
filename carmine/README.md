@@ -26,7 +26,7 @@ Add this to a file named `reflect-config.json` and add it to your GraalVM config
 [
   {
     "name":"org.apache.commons.pool2.impl.DefaultEvictionPolicy",
-    "allPublicConstructors" : true,
+    "allPublicConstructors" : true
   }
 ]
 ```
