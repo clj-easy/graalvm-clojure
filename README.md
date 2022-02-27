@@ -45,6 +45,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [μ/log](./mulog)                                     | Event logging system                                                |                                |
 | :white_check_mark: | [next.jdbc + honeysql](./next-jdbc)                  | Database driver and SQL-in-Clojure                                  |                                |
 | :white_check_mark: | [nippy](./nippy)                                     | Clojure serialization/deserialization library                       |                                |
+| :white_check_mark: | [pp-grid](./pp-grid)                                 | A text-formatting library                                           |                                |
 | :white_check_mark: | [ring/jetty](./ring-jetty)                           | Web server                                                          |                                |
 | :white_check_mark: | [safely](./safely)                                   | Circuit breaker                                                     |                                |
 | :white_check_mark: | [secure-random](./secure-random)                     | `SecureRandom` initialization                                       |                                |
