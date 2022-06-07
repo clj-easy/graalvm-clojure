@@ -55,6 +55,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [tech.ml.dataset](./tech.ml.dataset)                 | A Clojure high performance data processing system                   |                                |
 | :white_check_mark: | [timbre](./timbre)                                   | Pure Clojure/Script logging library                                 |                                |
 | :white_check_mark: | [pedestal](./pedestal)                               | Pedestal is a sturdy and reliable base for services and APIs.       |                                |
+| :white_check_mark: | [claypoole](./claypoole)                             | Claypoole: Threadpool tools for Clojure                             |                                |
 
 
 More libraries to come (*PRs are welcome*).
