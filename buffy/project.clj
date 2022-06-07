@@ -15,4 +15,6 @@
     "native-image" "--report-unsupported-elements-at-runtime"
     "--initialize-at-build-time" "--no-server"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
-    "-H:Name=./target/${:name}"]})
+    "-H:Name=./target/${:name}"]
+
+   "run-native" ["shell" "./target/${:name}"]})
