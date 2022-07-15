@@ -1,0 +1,9 @@
+{
+  "resources": {
+    "includes": [
+      {
+        "pattern": "\\Qlog4j.properties\\E"
+      }
+    ]
+  }
+}

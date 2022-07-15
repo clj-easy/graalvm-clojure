@@ -1,0 +1,42 @@
+[
+  {
+    "name": "clojure.tools.logging.impl.LoggerFactory",
+    "allPublicConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.apache.log4j.AppenderSkeleton",
+    "allPublicConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.apache.log4j.ConsoleAppender",
+    "allPublicConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.apache.log4j.Layout",
+    "allPublicConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.apache.log4j.PatternLayout",
+    "allPublicConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.apache.log4j.WriterAppender",
+    "allPublicConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.slf4j.Logger",
+    "allPublicConstructors": true,
+    "allPublicMethods": true
+  },
+  {
+    "name": "org.slf4j.LoggerFactory",
+    "allPublicConstructors": true,
+    "allPublicMethods": true
+  }
+]
