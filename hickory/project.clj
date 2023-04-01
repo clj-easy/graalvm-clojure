@@ -2,7 +2,7 @@
 
   :dependencies [[org.clojure/clojure "1.10.3"]
                  ;; add the library here
-                 ]
+                 [hickory "0.7.1"]]
 
   :main simple.main
 
