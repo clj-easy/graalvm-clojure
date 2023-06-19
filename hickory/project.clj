@@ -14,7 +14,8 @@
   :aliases
   {"native"
    ["shell"
-    "/usr/lib/jvm/java-17-graalvm/bin/native-image" "--report-unsupported-elements-at-runtime"
+    ;; ADD GraalVM bin dir to the $PATH
+    "native-image" "--report-unsupported-elements-at-runtime"
     "--no-server" "--no-fallback"
     "--initialize-at-build-time"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
