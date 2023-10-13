@@ -12,7 +12,7 @@ Test with (requires a local GraalVM installation):
 
     lein do clean, uberjar, native, run-native
 
-alternatively use a Dockerized verions:
+alternatively use a Dockerized versions:
 
     docker build --progress=plain -t zetasketch-test .
 
