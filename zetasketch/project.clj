@@ -23,7 +23,7 @@
     "--verbose"
     "--no-fallback"
     "--report-unsupported-elements-at-runtime"
-    "--initialize-at-build-time=clojure,simple,com.google.zetasketch,com.google.protos.zetasketch"
+    "--initialize-at-build-time=clojure,simple"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
     "-H:Name=./target/${:name}"]
 

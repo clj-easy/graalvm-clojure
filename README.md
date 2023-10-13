@@ -57,7 +57,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [pedestal](./pedestal)                               | Pedestal is a sturdy and reliable base for services and APIs.       |                                |
 | :white_check_mark: | [claypoole](./claypoole)                             | Claypoole: Threadpool tools for Clojure                             |                                |
 | :white_check_mark: | [upit](./upit)                                       | Very very simple library to initialise your app stack.              |                                |
-| :warning:          | [zetasketch](./zetasketch)                           | Sketch data structures like HLL                                     | Serialization doesn't work     |
+| ::white_check_mark:| [zetasketch](./zetasketch)                           | Sketch data structures like HLL                                     | requires reflect-config.json     |
 
 
 More libraries to come (*PRs are welcome*).

@@ -19,11 +19,9 @@ alternatively use a Dockerized versions:
 Add any info might be useful for the reader.
 
 
-## Error
+## Error fixed
 
 Zetasketch doesn't work due to ProtoBuf serialize error.
-
-This error appears in AMD64 version of GraalVM 20.0.2. Adding the [reflect-config.json](./resources/META-INF/native-image/com.google/zetasketch/reflect-config.json) seems to fix the issue in some platform/version but not all.
 
 ```
 "RESULT1:" 3
@@ -48,3 +46,5 @@ Caused by: com.google.zetasketch.shaded.com.google.protobuf.InvalidProtocolBuffe
 The problem seems to be the leading "0" in DATA1: `0 0 0 0 0 0 0 0`
 
 similar issues on the web: https://github.com/quarkusio/quarkus/issues/35125
+
+**TO FIX THIS ERROR SEE use [reflect-config.json](./resources/META-INF/native-image/com.google/zetasketch/reflect-config.json)**
