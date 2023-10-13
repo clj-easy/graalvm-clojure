@@ -8,10 +8,13 @@ Currently testing:
 
     [com.google.zetasketch/zetasketch "0.1.0"]
 
-Test with:
+Test with (requires a local GraalVM installation):
 
     lein do clean, uberjar, native, run-native
 
+alternatively use a Dockerized verions:
+
+    docker build --progress=plain -t zetasketch-test .
 
 Add any info might be useful for the reader.
 
@@ -19,6 +22,8 @@ Add any info might be useful for the reader.
 ## Error
 
 Zetasketch doesn't work due to ProtoBuf serialize error.
+
+This error appears in AMD64 version of GraalVM 20.0.2. Adding the [reflect-config.json](./resources/META-INF/native-image/com.google/zetasketch/reflect-config.json) seems to fix the issue in some platform/version but not all.
 
 ```
 "RESULT1:" 3

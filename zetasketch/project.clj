@@ -1,6 +1,6 @@
 (defproject sample-project "0.1.0-SNAPSHOT"
 
-  :dependencies [[org.clojure/clojure "1.10.3"]
+  :dependencies [[org.clojure/clojure "1.11.1"]
                  ;; add the library here
                  [com.google.zetasketch/zetasketch "0.1.0"]
                  ]
@@ -15,8 +15,15 @@
   :aliases
   {"native"
    ["shell"
-    "native-image" "-march=native" "-Ob"  "--report-unsupported-elements-at-runtime"  "--no-fallback"
-    "--initialize-at-build-time"
+    "native-image"
+    "-Ob"
+    "-H:ReflectionConfigurationFiles=./resources/META-INF/native-image/com.google/zetasketch/reflect-config.json"
+    "-H:+TraceNativeToolUsage"
+    "-H:+AllowIncompleteClasspath"
+    "--verbose"
+    "--no-fallback"
+    "--report-unsupported-elements-at-runtime"
+    "--initialize-at-build-time=clojure,simple,com.google.zetasketch,com.google.protos.zetasketch"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
     "-H:Name=./target/${:name}"]
 
