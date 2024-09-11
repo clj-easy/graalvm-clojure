@@ -19,7 +19,7 @@ OpenJDK Runtime Environment GraalVM CE 20.1.0 (build 11.0.7+10-jvmci-20.1-b02)
 OpenJDK 64-Bit Server VM GraalVM CE 20.1.0 (build 11.0.7+10-jvmci-20.1-b02, mixed mode, sharing)
 ```
 
-Now install the `native-image` component:
+For GraalVM versions before v21, you must now install the `native-image` component:
 
 ``` bash
 $ gu install native-image
@@ -34,6 +34,14 @@ ComponentId              Version             Component name      Origin
 graalvm                  20.1.0              GraalVM Core
 native-image             20.1.0              Native Image        github.com
 ```
+
+At this point you should have access to the `native-image` command:
+
+```
+$ native-image
+Please specify options for native-image building or use --help for more info.
+```
+
 
 **NOTE**: *if you are on Mac OSX you might need to de-quarantine the binaries.*
 Here a script to do so:
@@ -64,15 +72,12 @@ Update the `project.clj` and add the `:main`
   :url "http://example.com/FIXME"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url "https://www.eclipse.org/legal/epl-2.0/"}
-  ;; clojure version "1.10.2-alpha1" includes fixes for some graalvm specific issues
-  ;; see https://clojure.org/community/devchangelog#_release_1_10_2
-  :dependencies [[org.clojure/clojure "1.10.3"]]
+  :dependencies [[org.clojure/clojure "1.12.0"]]
   ;; add the main namespace
   :main hello-world.core
 
   ;; add AOT compilation
-  :profiles {:uberjar {:aot :all}}
-  )
+  :profiles {:uberjar {:aot :all}})
 ```
 
 Add a `-main` function in your `hello-world.core` namespace
@@ -118,22 +123,71 @@ native-image --report-unsupported-elements-at-runtime \
              -jar ./target/hello-world-0.1.0-SNAPSHOT-standalone.jar \
              -H:Name=./target/hello-world
 
-[./target/hello-world:33840]    classlist:   3,119.60 ms,  0.96 GB
-[./target/hello-world:33840]        (cap):   2,250.97 ms,  0.96 GB
-[./target/hello-world:33840]        setup:   3,980.23 ms,  0.96 GB
-[./target/hello-world:33840]     (clinit):     163.43 ms,  1.72 GB
-[./target/hello-world:33840]   (typeflow):   6,249.38 ms,  1.72 GB
-[./target/hello-world:33840]    (objects):   4,975.02 ms,  1.72 GB
-[./target/hello-world:33840]   (features):     202.49 ms,  1.72 GB
-[./target/hello-world:33840]     analysis:  11,819.61 ms,  1.72 GB
-[./target/hello-world:33840]     universe:     341.69 ms,  1.72 GB
-[./target/hello-world:33840]      (parse):   1,850.44 ms,  1.72 GB
-[./target/hello-world:33840]     (inline):   2,497.03 ms,  1.72 GB
-[./target/hello-world:33840]    (compile):  12,415.94 ms,  2.35 GB
-[./target/hello-world:33840]      compile:  17,341.60 ms,  2.35 GB
-[./target/hello-world:33840]        image:   1,197.96 ms,  2.35 GB
-[./target/hello-world:33840]        write:     643.75 ms,  2.35 GB
-[./target/hello-world:33840]      [total]:  38,716.97 ms,  2.35 GB
+Warning: Ignoring server-mode native-image argument --no-server.
+Warning: The option '-H:Name=./target/hello-world' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
+Warning: Please re-evaluate whether any experimental option is required, and either remove or unlock it. The build output lists all active experimental options, including where they come from and possible alternatives. If you think an experimental option should be considered as stable, please file an issue.
+========================================================================================================================
+GraalVM Native Image: Generating 'hello-world' (executable)...
+========================================================================================================================
+For detailed information and explanations on the build output, visit:
+https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
+------------------------------------------------------------------------------------------------------------------------
+[1/8] Initializing...                                                                                    (8.1s @ 0.14GB)
+ Java version: 21.0.2+13, vendor version: GraalVM CE 21.0.2+13.1
+ Graal compiler: optimization level: 2, target machine: x86-64-v3
+ C compiler: cc (apple, x86_64, 15.0.0)
+ Garbage collector: Serial GC (max heap size: 80% of RAM)
+ 1 user-specific feature(s):
+ - com.oracle.svm.thirdparty.gson.GsonFeature
+------------------------------------------------------------------------------------------------------------------------
+ 1 experimental option(s) unlocked:
+ - '-H:Name' (alternative API option(s): -o hello-world; origin(s): command line)
+------------------------------------------------------------------------------------------------------------------------
+Build resources:
+ - 10.44GB of memory (32.6% of 32.00GB system memory, determined at start)
+ - 8 thread(s) (100.0% of 8 available processor(s), determined at start)
+[2/8] Performing analysis...  [*****]                                                                   (15.4s @ 0.31GB)
+    3,582 reachable types   (73.9% of    4,850 total)
+    4,056 reachable fields  (49.9% of    8,130 total)
+   17,154 reachable methods (45.5% of   37,736 total)
+    1,097 types,    87 fields, and   695 methods registered for reflection
+       57 types,    57 fields, and    52 methods registered for JNI access
+        4 native libraries: -framework Foundation, dl, pthread, z
+[3/8] Building universe...                                                                               (3.4s @ 0.33GB)
+[4/8] Parsing methods...      [*]                                                                        (1.9s @ 0.38GB)
+[5/8] Inlining methods...     [***]                                                                      (1.7s @ 0.38GB)
+[6/8] Compiling methods...    [****]                                                                    (16.0s @ 0.32GB)
+[7/8] Layouting methods...    [*]                                                                        (2.0s @ 0.38GB)
+[8/8] Creating image...       [**]                                                                       (2.9s @ 0.30GB)
+   6.01MB (41.80%) for code area:    10,000 compilation units
+   8.16MB (56.77%) for image heap:  102,439 objects and 47 resources
+ 210.63kB ( 1.43%) for other data
+  14.38MB in total
+------------------------------------------------------------------------------------------------------------------------
+Top 10 origins of code area:                                Top 10 object types in image heap:
+   4.11MB java.base                                            1.80MB byte[] for code metadata
+ 976.71kB svm.jar (Native Image)                               1.33MB byte[] for java.lang.String
+ 550.00kB hello-world-0.1.0-SNAPSHOT-standalone.jar         1012.91kB java.lang.String
+ 113.72kB java.logging                                       880.58kB java.lang.Class
+  65.03kB org.graalvm.nativeimage.base                       307.83kB com.oracle.svm.core.hub.DynamicHubCompanion
+  47.59kB jdk.proxy1                                         279.30kB byte[] for general heap data
+  45.84kB jdk.proxy3                                         244.73kB java.util.HashMap$Node
+  27.06kB jdk.internal.vm.ci                                 225.45kB java.lang.Object[]
+  22.06kB org.graalvm.collections                            210.27kB heap alignment
+  11.42kB jdk.proxy2                                         193.56kB java.lang.String[]
+  11.17kB for 3 more packages                                  1.75MB for 1035 more object types
+------------------------------------------------------------------------------------------------------------------------
+Recommendations:
+ INIT: Adopt '--strict-image-heap' to prepare for the next GraalVM release.
+ HEAP: Set max heap for improved and more predictable memory usage.
+ CPU:  Enable more CPU features with '-march=native' for improved performance.
+------------------------------------------------------------------------------------------------------------------------
+                        2.9s (5.5% of total time) in 287 GCs | Peak RSS: 0.95GB | CPU load: 5.01
+------------------------------------------------------------------------------------------------------------------------
+Produced artifacts:
+ /Users/clojure/hello-world/target/hello-world (executable)
+========================================================================================================================
+Finished generating 'hello-world' in 52.0s.
 ```
 
 That's it! now you can test your native binary!
@@ -194,7 +248,7 @@ Overall your `project.clj` should look like as follow:
   :url "http://example.com/FIXME"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url "https://www.eclipse.org/legal/epl-2.0/"}
-  :dependencies [[org.clojure/clojure "1.9.0"]]
+  :dependencies [[org.clojure/clojure "1.12.0"]]
   :main hello-world.core
   :profiles {:uberjar {:aot :all}
              :dev {:plugins [[lein-shell "0.5.0"]]}}
@@ -205,31 +259,18 @@ Overall your `project.clj` should look like as follow:
     "native-image" "--report-unsupported-elements-at-runtime"
     "--initialize-at-build-time" "--no-server"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
-    "-H:Name=./target/${:name}"]}
-  )
+    "-H:Name=./target/${:name}"]})
 ```
 
 With this in place you can just run `lein native` to build the native binary:
 
 ``` bash
 $ lein native
-OpenJDK 64-Bit Server VM warning: forcing TieredStopAtLevel to full optimization because JVMCI is enabled
-[./target/hello-world:33980]    classlist:   2,970.75 ms,  0.96 GB
-[./target/hello-world:33980]        (cap):   2,824.32 ms,  0.96 GB
-[./target/hello-world:33980]        setup:   4,532.29 ms,  0.96 GB
-[./target/hello-world:33980]     (clinit):     180.49 ms,  1.72 GB
-[./target/hello-world:33980]   (typeflow):   6,960.70 ms,  1.72 GB
-[./target/hello-world:33980]    (objects):   4,050.59 ms,  1.72 GB
-[./target/hello-world:33980]   (features):     267.73 ms,  1.72 GB
-[./target/hello-world:33980]     analysis:  11,822.33 ms,  1.72 GB
-[./target/hello-world:33980]     universe:     322.57 ms,  1.72 GB
-[./target/hello-world:33980]      (parse):   1,758.44 ms,  1.72 GB
-[./target/hello-world:33980]     (inline):   2,497.64 ms,  1.72 GB
-[./target/hello-world:33980]    (compile):  12,186.63 ms,  2.35 GB
-[./target/hello-world:33980]      compile:  17,039.18 ms,  2.35 GB
-[./target/hello-world:33980]        image:   1,252.06 ms,  2.35 GB
-[./target/hello-world:33980]        write:     430.08 ms,  2.35 GB
-[./target/hello-world:33980]      [total]:  38,668.99 ms,  2.35 GB
+...
+Produced artifacts:
+ /Users/clojure/hello-world/target/hello-world (executable)
+========================================================================================================================
+Finished generating 'hello-world' in 52.4s.
 
 $ ./target/hello-world
 Hello, World!
