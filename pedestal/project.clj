@@ -1,9 +1,9 @@
 (defproject pedestal "0.1.0-SNAPSHOT"
 
   :paths ["src"]
-  :dependencies [[org.clojure/clojure "1.10.2"]
-                 [io.pedestal/pedestal.service "0.5.10"]
-                 [io.pedestal/pedestal.jetty "0.5.10"]]
+  :dependencies [[org.clojure/clojure "1.12.0"]
+                 [io.pedestal/pedestal.service "0.7.2"]
+                 [io.pedestal/pedestal.jetty "0.7.2"]]
 
   :main simple.main
 
@@ -15,7 +15,7 @@
   :aliases
   {"native"
    ["shell"
-    "native-image"
+    "/Users/bruno.nascimento/Downloads/graalvm-jdk-23.0.1+11.1/Contents/Home/bin/native-image"
     "--report-unsupported-elements-at-runtime"
     "--no-server"
     "--allow-incomplete-classpath"
@@ -23,6 +23,7 @@
     "--enable-url-protocols=http,https"
     "-Dio.pedestal.log.defaultMetricsRecorder=nil"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
+    "-H:ReflectionConfigurationFiles=reflect-config.json"
     "-H:Name=./target/${:name}"]
 
    "run-native" ["shell" "./target/${:name}"]})
