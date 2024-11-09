@@ -17,6 +17,8 @@ Test with:
 
 ## Results
 
+Pedestal don't work without `--initialize-at-build-time` but it does not conflict with the usage of `graal-build-time`.
+
 `[io.pedestal.http :as http]` :white_check_mark:
 `[io.pedestal.jetty :as jetty]` :white_check_mark:
 `[io.pedestal.http.body-params :as body-params]` :white_check_mark:
