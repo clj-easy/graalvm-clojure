@@ -1,18 +1,34 @@
 (ns simple.main
-  (:require [io.pedestal.http :as http])
+  (:require [io.pedestal.http :as http]
+            [io.pedestal.http.body-params :as body-params]
+            [io.pedestal.interceptor :as pedestal.interceptor])
   (:gen-class))
 
+(def hello-word-interceptor
+  (pedestal.interceptor/interceptor
+    {:name  ::hello-world
+     :enter (fn [context]
+              (assoc-in context [:request :hello] :world))}))
+
 (defn handler
-  [_]
-  {:status 200
+  [{:keys [hello]}]
+  {:status  200
    :headers {"Content-Type" "text/html"}
-   :body "Hello GraalVM"})
+   :body    (str "Hello GraalVM " (name hello))})
+
+(defn echo-handler
+  [{:keys [json-params]}]
+  {:status 200
+   :body   json-params})
 
 (def routes
-  #{["/" :get handler :route-name :hello]})
+  #{["/" :get [hello-word-interceptor
+               handler] :route-name :hello]
+    ["/echo" :post [(body-params/body-params)
+                    http/json-body
+                    echo-handler] :route-name :hello-echo]})
 
 (defn -main
-  "I don't do a whole lot ... yet."
   [& args]
   (println "server started on: http://localhost:3000/")
   (-> {:env          :dev
@@ -22,4 +38,3 @@
        ::http/routes routes}
       http/create-server
       http/start))
-
