@@ -15,7 +15,7 @@
   :aliases
   {"native"
    ["shell"
-    "/Users/bruno.nascimento/Downloads/graalvm-jdk-23.0.1+11.1/Contents/Home/bin/native-image"
+    "native-image"
     "--no-fallback"
     "--report-unsupported-elements-at-runtime"
     "--no-server"
