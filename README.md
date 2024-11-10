@@ -59,6 +59,7 @@ Here the list of libraries tested:
 | :white_check_mark: | [claypoole](./claypoole)                             | Claypoole: Threadpool tools for Clojure                             |                                |
 | :white_check_mark: | [upit](./upit)                                       | Very very simple library to initialise your app stack.              |                                |
 | :white_check_mark: | [zetasketch](./zetasketch)                           | Sketch data structures like HLL                                     | requires reflect-config.json   |
+| :white_check_mark: | [pg2-core](./pg2-core)                               | A Fast PostgreSQL Driver For Clojure                                |                                |
 
 
 More libraries to come (*PRs are welcome*).

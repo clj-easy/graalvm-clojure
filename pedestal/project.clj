@@ -3,7 +3,8 @@
   :paths ["src"]
   :dependencies [[org.clojure/clojure "1.12.0"]
                  [io.pedestal/pedestal.service "0.7.2"]
-                 [io.pedestal/pedestal.jetty "0.7.2"]]
+                 [io.pedestal/pedestal.jetty "0.7.2"]
+                 [com.github.clj-easy/graal-build-time "1.0.5"]]
 
   :main simple.main
 
@@ -22,6 +23,7 @@
     "--allow-incomplete-classpath"
     "--initialize-at-build-time"
     "--enable-url-protocols=http,https"
+    "--features=clj_easy.graal_build_time.InitClojureClasses"
     "-Dio.pedestal.log.defaultMetricsRecorder=nil"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
     "-H:ReflectionConfigurationFiles=reflect-config.json"
