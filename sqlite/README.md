@@ -4,6 +4,8 @@ Testing
 whether [next.jdbc](https://github.com/seancorfield/next-jdbc) + [SQLite driver](https://github.com/xerial/sqlite-jdbc)
 can be used in a native binary image with GraalVM(23).
 
+The source code for this example was based on: https://github.com/ericdallo/sqlite-graalvm-sample
+
 ## Usage
 
 Currently testing:
