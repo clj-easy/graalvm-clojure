@@ -13,3 +13,4 @@ pom.xml.asc
 /.idea/
 /sample-project.iml
 /sqlite.iml
+/.my-test.db
