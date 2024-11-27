@@ -24,7 +24,8 @@
     "-H:+PrintClassInitialization"
     "--features=clj_easy.graal_build_time.InitClojureClasses"
 
-    "-H:IncludeResources='.*/service.*edn'"
+    "-H:+UnlockExperimentalVMOptions"
+    "-H:ConfigurationFileDirectories=resources"
 
     "--enable-http" "--enable-https" "--enable-all-security-services"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
