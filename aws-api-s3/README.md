@@ -6,9 +6,9 @@ Testing whether [cognitect/aws-api+s3](https://github.com/cognitect-labs/aws-api
 
 Currently testing:
 
-    [com.cognitect.aws/api       "0.8.301"]
-    [com.cognitect.aws/endpoints "1.1.11.537"]
-    [com.cognitect.aws/s3        "714.2.430.0"]
+    [com.cognitect.aws/api       "0.8.692"]
+    [com.cognitect.aws/endpoints "1.1.12.772"]
+    [com.cognitect.aws/s3        "869.2.1687.0"]
 
 Gotchas:
 
