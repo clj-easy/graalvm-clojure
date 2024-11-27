@@ -25,7 +25,7 @@
     "--features=clj_easy.graal_build_time.InitClojureClasses"
 
     "-H:+UnlockExperimentalVMOptions"
-    "-H:ConfigurationFileDirectories=resources"
+    "-H:ConfigurationFileDirectories=graalvm-resources"
 
     "--enable-http" "--enable-https" "--enable-all-security-services"
     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"

@@ -3,6 +3,9 @@
     "includes": [
       {
         "pattern": "cognitect/aws/.+\\.edn"
+      },
+      {
+        "pattern" : "cognitect_aws_http.edn"
       }
     ]
   }
