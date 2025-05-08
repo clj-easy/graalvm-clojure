@@ -1,0 +1,775 @@
+[ {
+  "name" : "java.net.Authenticator",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.CookieHandler",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.CookieManager",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.CookiePolicy",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.CookieStore",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.HttpCookie",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.PasswordAuthentication",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.ProxySelector",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.SocketTimeoutException",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpClient",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpClient$Builder",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpClient$Redirect",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpClient$Version",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpHeaders",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpRequest",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpRequest$BodyPublisher",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpRequest$BodyPublishers",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpRequest$Builder",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpResponse",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpResponse$BodyHandler",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpResponse$BodyHandlers",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.HttpTimeoutException",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.WebSocket",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.WebSocket$Builder",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.net.http.WebSocket$Listener",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.security.Signature",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.security.cert.CertificateFactory",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.security.cert.X509Certificate",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.crypto.Cipher",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.crypto.KeyAgreement",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.crypto.Mac",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.crypto.SecretKey",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.crypto.SecretKeyFactory",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.crypto.spec.GCMParameterSpec",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.crypto.spec.IvParameterSpec",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.crypto.spec.PBEKeySpec",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.crypto.spec.SecretKeySpec",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.HostnameVerifier",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.HttpsURLConnection",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.KeyManagerFactory",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.SSLContext",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.SSLException",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.SSLParameters",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.SSLSession",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.SSLSocket",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.SSLSocketFactory",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.TrustManager",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.TrustManagerFactory",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.X509ExtendedTrustManager",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "javax.net.ssl.X509TrustManager",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "jdk.internal.net.http.HttpClientBuilderImpl",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "jdk.internal.net.http.HttpClientFacade",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "jdk.internal.net.http.HttpRequestBuilderImpl",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "jdk.internal.net.http.HttpResponseImpl",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "jdk.internal.net.http.common.MinimalFuture",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "jdk.internal.net.http.websocket.BuilderImpl",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "jdk.internal.net.http.websocket.WebSocketImpl",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "org.eclipse.jgit.internal.JGitText",
+  "allPublicMethods" : true,
+  "allPublicFields" : true,
+  "allPublicConstructors" : true
+}, {
+  "name" : "clojure.lang.Delay",
+  "allPublicConstructors" : true
+}, {
+  "name" : "clojure.lang.DynamicClassLoader",
+  "allPublicConstructors" : true
+}, {
+  "name" : "clojure.lang.LineNumberingPushbackReader",
+  "allPublicConstructors" : true
+}, {
+  "name" : "java.io.EOFException",
+  "allPublicConstructors" : true
+}, {
+  "name" : "borkdude.graal.LockFix",
+  "allPublicMethods" : true
+}, {
+  "name" : "clojure.lang.PersistentQueue",
+  "allPublicFields" : true
+}, {
+  "name" : "clojure.lang.AFn"
+}, {
+  "name" : "clojure.lang.AFunction"
+}, {
+  "name" : "clojure.lang.AMapEntry"
+}, {
+  "name" : "clojure.lang.APersistentMap"
+}, {
+  "name" : "clojure.lang.APersistentSet"
+}, {
+  "name" : "clojure.lang.AReference"
+}, {
+  "name" : "clojure.lang.Associative"
+}, {
+  "name" : "clojure.lang.Atom"
+}, {
+  "name" : "clojure.lang.Cons"
+}, {
+  "name" : "clojure.lang.Counted"
+}, {
+  "name" : "clojure.lang.Cycle"
+}, {
+  "name" : "clojure.lang.Fn"
+}, {
+  "name" : "clojure.lang.IEditableCollection"
+}, {
+  "name" : "clojure.lang.IKVReduce"
+}, {
+  "name" : "clojure.lang.IMapEntry"
+}, {
+  "name" : "clojure.lang.IMeta"
+}, {
+  "name" : "clojure.lang.IObj"
+}, {
+  "name" : "clojure.lang.IPending"
+}, {
+  "name" : "clojure.lang.IPersistentCollection"
+}, {
+  "name" : "clojure.lang.IPersistentList"
+}, {
+  "name" : "clojure.lang.IPersistentStack"
+}, {
+  "name" : "clojure.lang.IPersistentVector"
+}, {
+  "name" : "clojure.lang.IRecord"
+}, {
+  "name" : "clojure.lang.IReduce"
+}, {
+  "name" : "clojure.lang.IReduceInit"
+}, {
+  "name" : "clojure.lang.IRef"
+}, {
+  "name" : "clojure.lang.ISeq"
+}, {
+  "name" : "clojure.lang.ITransientSet"
+}, {
+  "name" : "clojure.lang.ITransientVector"
+}, {
+  "name" : "clojure.lang.Iterate"
+}, {
+  "name" : "clojure.lang.Keyword"
+}, {
+  "name" : "clojure.lang.LispReader$Resolver"
+}, {
+  "name" : "clojure.lang.LongRange"
+}, {
+  "name" : "clojure.lang.Named"
+}, {
+  "name" : "clojure.lang.PersistentArrayMap"
+}, {
+  "name" : "clojure.lang.PersistentArrayMap$TransientArrayMap"
+}, {
+  "name" : "clojure.lang.PersistentHashMap$TransientHashMap"
+}, {
+  "name" : "clojure.lang.PersistentHashSet"
+}, {
+  "name" : "clojure.lang.PersistentHashSet$TransientHashSet"
+}, {
+  "name" : "clojure.lang.PersistentList"
+}, {
+  "name" : "clojure.lang.PersistentList$EmptyList"
+}, {
+  "name" : "clojure.lang.PersistentQueue"
+}, {
+  "name" : "clojure.lang.PersistentStructMap"
+}, {
+  "name" : "clojure.lang.PersistentTreeMap"
+}, {
+  "name" : "clojure.lang.PersistentTreeSet"
+}, {
+  "name" : "clojure.lang.PersistentVector"
+}, {
+  "name" : "clojure.lang.PersistentVector$TransientVector"
+}, {
+  "name" : "clojure.lang.Range"
+}, {
+  "name" : "clojure.lang.Ratio"
+}, {
+  "name" : "clojure.lang.ReaderConditional"
+}, {
+  "name" : "clojure.lang.Repeat"
+}, {
+  "name" : "clojure.lang.Reversible"
+}, {
+  "name" : "clojure.lang.Seqable"
+}, {
+  "name" : "clojure.lang.Sequential"
+}, {
+  "name" : "clojure.lang.Sorted"
+}, {
+  "name" : "clojure.lang.Symbol"
+}, {
+  "name" : "clojure.lang.Volatile"
+}, {
+  "name" : "java.lang.AbstractMethodError"
+}, {
+  "name" : "java.lang.ExceptionInInitializerError"
+}, {
+  "name" : "java.lang.LinkageError"
+}, {
+  "name" : "java.lang.NoSuchFieldException"
+}, {
+  "name" : "java.lang.ThreadDeath"
+}, {
+  "name" : "java.lang.VirtualMachineError"
+}, {
+  "name" : "java.sql.Timestamp"
+}, {
+  "name" : "java.util.AbstractList"
+}, {
+  "name" : "java.util.AbstractMap"
+}, {
+  "name" : "java.util.AbstractSet"
+}, {
+  "name" : "java.util.Collection"
+}, {
+  "name" : "java.util.Map$Entry"
+}, {
+  "name" : "java.util.concurrent.TimeoutException"
+}, {
+  "name" : "clojure.lang.Ratio",
+  "fields" : [ {
+    "name" : "numerator"
+  }, {
+    "name" : "denominator"
+  } ]
+}, {
+  "name" : "clojure.lang.MultiFn",
+  "fields" : [ {
+    "name" : "dispatchFn"
+  } ],
+  "methods" : [ {
+    "name" : "getMethod"
+  } ]
+}, {
+  "name" : "java.lang.reflect.Modifier",
+  "methods" : [ {
+    "name" : "isStatic"
+  } ]
+}, {
+  "name" : "clojure.lang.APersistentVector",
+  "methods" : [ {
+    "name" : "indexOf"
+  }, {
+    "name" : "contains"
+  } ]
+}, {
+  "name" : "java.net.URLClassLoader",
+  "methods" : [ {
+    "name" : "close"
+  }, {
+    "name" : "findResource"
+  }, {
+    "name" : "findResources"
+  }, {
+    "name" : "getResourceAsStream"
+  }, {
+    "name" : "getURLs"
+  } ]
+}, {
+  "name" : "java.util.TimeZone",
+  "methods" : [ {
+    "name" : "getTimeZone"
+  } ]
+}, {
+  "name" : "java.lang.reflect.AccessibleObject",
+  "methods" : [ {
+    "name" : "canAccess"
+  } ]
+}, {
+  "allPublicMethods" : true,
+  "allPublicConstructors" : true,
+  "name" : "clojure.lang.LineNumberingPushbackReader"
+}, {
+  "name" : "clojure.lang.Agent",
+  "fields" : [ {
+    "name" : "pooledExecutor"
+  }, {
+    "name" : "soloExecutor"
+  } ]
+}, {
+  "name" : "java.lang.reflect.Array",
+  "methods" : [ {
+    "name" : "newInstance"
+  }, {
+    "name" : "set"
+  } ]
+}, {
+  "name" : "java.lang.reflect.Member",
+  "methods" : [ {
+    "name" : "getModifiers"
+  } ]
+}, {
+  "name" : "java.lang.Package",
+  "methods" : [ {
+    "name" : "getName"
+  } ]
+}, {
+  "name" : "clojure.lang.ARef",
+  "methods" : [ {
+    "name" : "getWatches"
+  } ]
+}, {
+  "name" : "java.lang.reflect.Method",
+  "methods" : [ {
+    "name" : "getName"
+  }, {
+    "name" : "getModifiers"
+  }, {
+    "name" : "getParameterTypes"
+  }, {
+    "name" : "getReturnType"
+  } ]
+}, {
+  "name" : "clojure.lang.ILookup",
+  "methods" : [ {
+    "name" : "valAt"
+  } ]
+}, {
+  "name" : "java.net.Inet6Address",
+  "methods" : [ {
+    "name" : "getHostAddress"
+  } ]
+}, {
+  "name" : "java.lang.Runnable",
+  "methods" : [ {
+    "name" : "run"
+  } ]
+}, {
+  "name" : "clojure.lang.RT",
+  "methods" : [ {
+    "name" : "aget"
+  }, {
+    "name" : "aset"
+  }, {
+    "name" : "aclone"
+  }, {
+    "name" : "iter"
+  }, {
+    "name" : "baseLoader"
+  } ]
+}, {
+  "name" : "java.lang.reflect.Field",
+  "methods" : [ {
+    "name" : "getName"
+  }, {
+    "name" : "getModifiers"
+  } ]
+}, {
+  "name" : "java.lang.ClassLoader",
+  "methods" : [ {
+    "name" : "getResource"
+  }, {
+    "name" : "getResources"
+  }, {
+    "name" : "getResourceAsStream"
+  }, {
+    "name" : "getParent"
+  } ]
+}, {
+  "allPublicConstructors" : true,
+  "name" : "java.net.URL",
+  "methods" : [ {
+    "name" : "equals"
+  }, {
+    "name" : "getAuthority"
+  }, {
+    "name" : "getContent"
+  }, {
+    "name" : "getDefaultPort"
+  }, {
+    "name" : "getFile"
+  }, {
+    "name" : "getHost"
+  }, {
+    "name" : "getPath"
+  }, {
+    "name" : "getPort"
+  }, {
+    "name" : "getProtocol"
+  }, {
+    "name" : "getQuery"
+  }, {
+    "name" : "getRef"
+  }, {
+    "name" : "getUserInfo"
+  }, {
+    "name" : "hashCode"
+  }, {
+    "name" : "openConnection"
+  }, {
+    "name" : "openStream"
+  }, {
+    "name" : "sameFile"
+  }, {
+    "name" : "toExternalForm"
+  }, {
+    "name" : "toString"
+  }, {
+    "name" : "toURI"
+  } ],
+  "allPublicFields" : true
+}, {
+  "name" : "clojure.lang.IPersistentSet",
+  "methods" : [ {
+    "name" : "disjoin"
+  } ]
+}, {
+  "name" : "java.net.Inet4Address",
+  "methods" : [ {
+    "name" : "getHostAddress"
+  } ]
+}, {
+  "name" : "java.util.Iterator",
+  "methods" : [ {
+    "name" : "hasNext"
+  }, {
+    "name" : "next"
+  } ]
+}, {
+  "name" : "clojure.lang.IFn",
+  "methods" : [ {
+    "name" : "applyTo"
+  } ]
+}, {
+  "name" : "clojure.lang.PersistentHashMap",
+  "fields" : [ {
+    "name" : "EMPTY"
+  } ]
+}, {
+  "name" : "java.util.Arrays",
+  "methods" : [ {
+    "name" : "copyOf"
+  }, {
+    "name" : "copyOfRange"
+  }, {
+    "name" : "equals"
+  }, {
+    "name" : "fill"
+  } ]
+}, {
+  "allPublicConstructors" : true,
+  "name" : "java.lang.Thread",
+  "methods" : [ {
+    "name" : "activeCount"
+  }, {
+    "name" : "checkAccess"
+  }, {
+    "name" : "currentThread"
+  }, {
+    "name" : "dumpStack"
+  }, {
+    "name" : "enumerate"
+  }, {
+    "name" : "getAllStackTraces"
+  }, {
+    "name" : "getContextClassLoader"
+  }, {
+    "name" : "getDefaultUncaughtExceptionHandler"
+  }, {
+    "name" : "getId"
+  }, {
+    "name" : "getName"
+  }, {
+    "name" : "getPriority"
+  }, {
+    "name" : "getStackTrace"
+  }, {
+    "name" : "getState"
+  }, {
+    "name" : "getThreadGroup"
+  }, {
+    "name" : "getUncaughtExceptionHandler"
+  }, {
+    "name" : "holdsLock"
+  }, {
+    "name" : "interrupt"
+  }, {
+    "name" : "interrupted"
+  }, {
+    "name" : "isAlive"
+  }, {
+    "name" : "isDaemon"
+  }, {
+    "name" : "isInterrupted"
+  }, {
+    "name" : "join"
+  }, {
+    "name" : "run"
+  }, {
+    "name" : "setContextClassLoader"
+  }, {
+    "name" : "setDaemon"
+  }, {
+    "name" : "setDefaultUncaughtExceptionHandler"
+  }, {
+    "name" : "setName"
+  }, {
+    "name" : "setPriority"
+  }, {
+    "name" : "setUncaughtExceptionHandler"
+  }, {
+    "name" : "sleep"
+  }, {
+    "name" : "start"
+  }, {
+    "name" : "toString"
+  }, {
+    "name" : "yield"
+  }, {
+    "name" : "ofVirtual"
+  }, {
+    "name" : "startVirtualThread"
+  }, {
+    "name" : "isVirtual"
+  } ]
+}, {
+  "name" : "clojure.lang.IPersistentMap",
+  "methods" : [ {
+    "name" : "without"
+  } ]
+}, {
+  "allPublicConstructors" : true,
+  "name" : "clojure.lang.LazySeq",
+  "methods" : [ {
+    "name" : "indexOf"
+  }, {
+    "name" : "contains"
+  } ]
+}, {
+  "allPublicConstructors" : true,
+  "name" : "clojure.lang.MapEntry",
+  "methods" : [ {
+    "name" : "create"
+  } ]
+}, {
+  "methods" : [ {
+    "name" : "exec"
+  } ],
+  "name" : "org.graalvm.nativeimage.ProcessProperties"
+}, {
+  "name" : "clojure.lang.Indexed",
+  "methods" : [ {
+    "name" : "nth"
+  } ]
+} ]
