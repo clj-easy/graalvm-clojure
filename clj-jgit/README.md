@@ -1,4 +1,4 @@
-# cheshire
+# Clj-jgit
 
 Testing whether [clj-jgit](https://github.com/clj-jgit/clj-jgit) library can be used in a native binary image with GraalVM.
 
