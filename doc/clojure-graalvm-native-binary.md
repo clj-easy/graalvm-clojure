@@ -68,16 +68,34 @@ Update the `project.clj` and add the `:main`
 
 ``` clojure
 (defproject hello-world "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
-            :url "https://www.eclipse.org/legal/epl-2.0/"}
-  :dependencies [[org.clojure/clojure "1.12.0"]]
+
+  :dependencies [[org.clojure/clojure "1.12.0"]
+                 [com.github.clj-easy/graal-build-time "1.0.5"]]
+
   ;; add the main namespace
   :main hello-world.core
 
+  ;; show reflection warnings.
+  :global-vars {*warn-on-reflection* true}
+
   ;; add AOT compilation
-  :profiles {:uberjar {:aot :all}})
+  :profiles {:uberjar {:aot :all}
+             :dev {:plugins [[lein-shell "0.5.0"]]}}
+
+  :aliases
+  {"native"
+   ["do" ["clean"] ["uberjar"]
+    ["shell"
+     "native-image"
+     ;;"--verbose"
+     "--no-fallback"
+     ;; if you are getting the following error, uncomment the next two lines
+     ;; Error: Darwin native toolchain (x86_64) implies native-image target architecture class jdk.vm.ci.amd64.AMD64 but configured native-image target architecture is class jdk.vm.ci.aarch64.AArch64.
+     ;;"--native-compiler-options=-arch"
+     ;;"--native-compiler-options=arm64"
+     "--features=clj_easy.graal_build_time.InitClojureClasses"
+     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
+     "-o" "./target/${:name}"]]})
 ```
 
 Add a `-main` function in your `hello-world.core` namespace
@@ -100,94 +118,71 @@ Hello, World!
 
 ### Step3 - build the native binary
 
-Now build a uberjar.
+Now build a uberjar and the native image.
 
 ``` bash
-$ lein do clean, uberjar
+$ lein native
 Compiling hello-world.core
 Created /private/tmp/hello-world/target/hello-world-0.1.0-SNAPSHOT.jar
 Created /private/tmp/hello-world/target/hello-world-0.1.0-SNAPSHOT-standalone.jar
-```
 
-Now that you have a `-standalone.jar` file which contains all the
-classes of your projects and all the dependencies all in one jar, you
-can proceed to build the native binary.
-
-**NOTE:** If you are running with a earlier version than *GraalVM v19.0.0*
-          you don't need the flag `--initialize-at-build-time`.
-
-``` bash
-native-image --report-unsupported-elements-at-runtime \
-             --initialize-at-build-time \
-             --no-server \
-             -jar ./target/hello-world-0.1.0-SNAPSHOT-standalone.jar \
-             -H:Name=./target/hello-world
-
-Warning: Ignoring server-mode native-image argument --no-server.
-Warning: The option '-H:Name=./target/hello-world' is experimental and must be enabled via '-H:+UnlockExperimentalVMOptions' in the future.
-Warning: Please re-evaluate whether any experimental option is required, and either remove or unlock it. The build output lists all active experimental options, including where they come from and possible alternatives. If you think an experimental option should be considered as stable, please file an issue.
-========================================================================================================================
+===========================================================================================
 GraalVM Native Image: Generating 'hello-world' (executable)...
-========================================================================================================================
-For detailed information and explanations on the build output, visit:
-https://github.com/oracle/graal/blob/master/docs/reference-manual/native-image/BuildOutput.md
-------------------------------------------------------------------------------------------------------------------------
-[1/8] Initializing...                                                                                    (8.1s @ 0.14GB)
- Java version: 21.0.2+13, vendor version: GraalVM CE 21.0.2+13.1
- Graal compiler: optimization level: 2, target machine: x86-64-v3
- C compiler: cc (apple, x86_64, 15.0.0)
+===========================================================================================
+[clj-easy/graal-build-time] Registering packages for build time initialization: clojure, clj_easy.graal_build_time, hello_world
+[1/8] Initializing...                                                       (5.5s @ 0.31GB)
+ Java version: 25.0.2+10, vendor version: GraalVM CE 25.0.2+10.1
+ Graal compiler: optimization level: 2, target machine: armv8.1-a
+ C compiler: cc (apple, arm64, 17.0.0)
  Garbage collector: Serial GC (max heap size: 80% of RAM)
- 1 user-specific feature(s):
+ 2 user-specific feature(s):
+ - clj_easy.graal_build_time.InitClojureClasses
  - com.oracle.svm.thirdparty.gson.GsonFeature
-------------------------------------------------------------------------------------------------------------------------
- 1 experimental option(s) unlocked:
- - '-H:Name' (alternative API option(s): -o hello-world; origin(s): command line)
-------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
 Build resources:
- - 10.44GB of memory (32.6% of 32.00GB system memory, determined at start)
- - 8 thread(s) (100.0% of 8 available processor(s), determined at start)
-[2/8] Performing analysis...  [*****]                                                                   (15.4s @ 0.31GB)
-    3,582 reachable types   (73.9% of    4,850 total)
-    4,056 reachable fields  (49.9% of    8,130 total)
-   17,154 reachable methods (45.5% of   37,736 total)
-    1,097 types,    87 fields, and   695 methods registered for reflection
-       57 types,    57 fields, and    52 methods registered for JNI access
+ - 24.73GB of memory (36.0% of system memory, using available memory)
+ - 10 thread(s) (100.0% of 10 available processor(s), determined at start)
+[2/8] Performing analysis...  [******]                                      (4.8s @ 0.42GB)
+    3,617 types,   3,966 fields, and  16,593 methods found reachable
+    1,128 types,      36 fields, and     435 methods registered for reflection
+       58 types,      58 fields, and      52 methods registered for JNI access
+        0 downcalls and 0 upcalls registered for foreign access
         4 native libraries: -framework Foundation, dl, pthread, z
-[3/8] Building universe...                                                                               (3.4s @ 0.33GB)
-[4/8] Parsing methods...      [*]                                                                        (1.9s @ 0.38GB)
-[5/8] Inlining methods...     [***]                                                                      (1.7s @ 0.38GB)
-[6/8] Compiling methods...    [****]                                                                    (16.0s @ 0.32GB)
-[7/8] Layouting methods...    [*]                                                                        (2.0s @ 0.38GB)
-[8/8] Creating image...       [**]                                                                       (2.9s @ 0.30GB)
-   6.01MB (41.80%) for code area:    10,000 compilation units
-   8.16MB (56.77%) for image heap:  102,439 objects and 47 resources
- 210.63kB ( 1.43%) for other data
-  14.38MB in total
-------------------------------------------------------------------------------------------------------------------------
-Top 10 origins of code area:                                Top 10 object types in image heap:
-   4.11MB java.base                                            1.80MB byte[] for code metadata
- 976.71kB svm.jar (Native Image)                               1.33MB byte[] for java.lang.String
- 550.00kB hello-world-0.1.0-SNAPSHOT-standalone.jar         1012.91kB java.lang.String
- 113.72kB java.logging                                       880.58kB java.lang.Class
-  65.03kB org.graalvm.nativeimage.base                       307.83kB com.oracle.svm.core.hub.DynamicHubCompanion
-  47.59kB jdk.proxy1                                         279.30kB byte[] for general heap data
-  45.84kB jdk.proxy3                                         244.73kB java.util.HashMap$Node
-  27.06kB jdk.internal.vm.ci                                 225.45kB java.lang.Object[]
-  22.06kB org.graalvm.collections                            210.27kB heap alignment
-  11.42kB jdk.proxy2                                         193.56kB java.lang.String[]
-  11.17kB for 3 more packages                                  1.75MB for 1035 more object types
-------------------------------------------------------------------------------------------------------------------------
+[3/8] Building universe...                                                  (0.9s @ 0.47GB)
+[4/8] Parsing methods...      [*]                                           (0.5s @ 0.53GB)
+[5/8] Inlining methods...     [***]                                         (0.4s @ 0.54GB)
+[6/8] Compiling methods...    [***]                                         (5.4s @ 0.50GB)
+[7/8] Laying out methods...   [*]                                           (1.1s @ 0.56GB)
+[8/8] Creating image...       [*]                                           (1.3s @ 0.63GB)
+   5.54MB (40.80%) for code area:     9,710 compilation units
+   7.73MB (56.97%) for image heap:   93,960 objects and 55 resources
+ 301.56kB ( 2.22%) for other data
+  13.57MB in total image size, 13.57MB in total file size
+-------------------------------------------------------------------------------------------
+Top 10 origins of code area:                 Top 10 object types in image heap:
+   3.71MB java.base                             1.54MB byte[] for code metadata
+ 884.36kB svm.jar (Native Image)                1.23MB byte[] for java.lang.String
+ 496.02kB h.1.0-SNAPSHOT-standalone.jar       861.15kB java.lang.String
+ 105.87kB java.logging                        694.46kB c.o.s.core.hub.DynamicHubCompanion
+  78.34kB org.graalvm.nativeimage.base        520.58kB java.lang.Class
+  47.58kB jdk.proxy2                          461.26kB byte[] for general heap data
+  38.69kB org.graalvm.nativeimage.configure   314.93kB java.util.HashMap$Node
+  37.96kB jdk.proxy1                          230.68kB java.lang.Object[]
+  25.66kB jdk.graal.compiler                  178.75kB java.util.HashMap$Node[]
+  20.98kB org.graalvm.collections             163.34kB java.lang.String[]
+  32.02kB for 6 more packages                   1.54MB for 1082 more object types
+-------------------------------------------------------------------------------------------
 Recommendations:
- INIT: Adopt '--strict-image-heap' to prepare for the next GraalVM release.
+ FUTR: Use '--future-defaults=all' to prepare for future releases.
  HEAP: Set max heap for improved and more predictable memory usage.
  CPU:  Enable more CPU features with '-march=native' for improved performance.
-------------------------------------------------------------------------------------------------------------------------
-                        2.9s (5.5% of total time) in 287 GCs | Peak RSS: 0.95GB | CPU load: 5.01
-------------------------------------------------------------------------------------------------------------------------
-Produced artifacts:
- /Users/clojure/hello-world/target/hello-world (executable)
-========================================================================================================================
-Finished generating 'hello-world' in 52.0s.
+-------------------------------------------------------------------------------------------
+         0.9s (4.2% of total time) in 114 GCs | Peak RSS: 1.39GB | CPU load: 5.43
+-------------------------------------------------------------------------------------------
+Build artifacts:
+ /private/tmp/hello-world/target/hello-world (executable)
+===========================================================================================
+Finished generating 'hello-world' in 20.6s.
 ```
 
 That's it! now you can test your native binary!
@@ -216,64 +211,204 @@ user    0m0.004s
 sys     0m0.004s
 ```
 
-### A final touch
+### Multi-platform builds with GitHub Actions
 
-If you don't want to remember the command line to build the native binary you can always
-add it to the `project.clj` as follow:
+If you a planning to build binaries for different platform like Linux, MacOS and Windows here is at
+ready to use GitHub Action workflow to use.
 
-Add the [`lein-shell` plugin](https://github.com/hypirion/lein-shell) to the `project.clj`
-
-``` clojure
-  :profiles {:uberjar {:aot :all}
-             :dev {:plugins [[lein-shell "0.5.0"]]}}
-```
-
-Now you can add an alias for it the `project.clj itself:
-
-``` clojure
-  :aliases
-  {"native"
-   ["shell"
-    "native-image" "--report-unsupported-elements-at-runtime"
-    "--initialize-at-build-time" "--no-server"
-    "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
-    "-H:Name=./target/${:name}"]}
-```
-
-Overall your `project.clj` should look like as follow:
+But first update your `project.clj` to look as follow
 
 ``` clojure
 (defproject hello-world "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
-  :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
-            :url "https://www.eclipse.org/legal/epl-2.0/"}
-  :dependencies [[org.clojure/clojure "1.12.0"]]
+
+  :dependencies [[org.clojure/clojure "1.12.0"]
+                 [com.github.clj-easy/graal-build-time "1.0.5"]]
+
+  ;; add the main namespace
   :main hello-world.core
+
+  ;; show reflection warnings.
+  :global-vars {*warn-on-reflection* true}
+
+  ;; add AOT compilation
   :profiles {:uberjar {:aot :all}
              :dev {:plugins [[lein-shell "0.5.0"]]}}
 
   :aliases
   {"native"
-   ["shell"
-    "native-image" "--report-unsupported-elements-at-runtime"
-    "--initialize-at-build-time" "--no-server"
-    "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
-    "-H:Name=./target/${:name}"]})
+   ["do" ["clean"] ["uberjar"]
+    ["shell"
+     "native-image"
+     ;;"--verbose"
+     "--no-fallback"
+     ;; if you are getting the following error, uncomment the next two lines
+     ;; Error: Darwin native toolchain (x86_64) implies native-image target architecture class jdk.vm.ci.amd64.AMD64 but configured native-image target architecture is class jdk.vm.ci.aarch64.AArch64.
+     ;;"--native-compiler-options=-arch"
+     ;;"--native-compiler-options=arm64"
+     "--features=clj_easy.graal_build_time.InitClojureClasses"
+     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
+     "-o" "./target/${:name}"]]
+
+
+   "native-win"
+   ["do" ["clean"] ["uberjar"]
+    ["shell"
+     "native-image"
+     ;;"--verbose"
+     "--no-fallback"
+     "--features=clj_easy.graal_build_time.InitClojureClasses"
+     "-jar" "./target/${:uberjar-name:-${:name}-${:version}-standalone.jar}"
+     "-o" "./target/${:name}"]]
+   }
+
+  )
 ```
 
-With this in place you can just run `lein native` to build the native binary:
 
-``` bash
-$ lein native
-...
-Produced artifacts:
- /Users/clojure/hello-world/target/hello-world (executable)
-========================================================================================================================
-Finished generating 'hello-world' in 52.4s.
+Finally add in your project the following file `.github/workflows/clojure-build-native.yml`
 
-$ ./target/hello-world
-Hello, World!
+```
+name: Clojure CI for cross-platform native images.
+
+on: [push]
+
+
+jobs:
+  build:
+
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        include:
+          - os: macos-latest
+            name: macos
+            arch: aarch64
+
+          # https://github.com/graalvm/graalvm-ce-builds/releases/tag/jdk-25.0.1
+          # Support for macOS x64 is deprecated. Version 25.0.1 is the last
+          # release that supports this hardware architecture. In future,
+          # GraalVM will only support macOS on AArch64 (Apple Silicon).
+          # --------------------------------------------------------------------
+          # - os: macos-15-intel
+          #   name: macos
+          #   arch: x64
+
+
+          - os: ubuntu-latest
+            name: linux
+            arch: x64
+
+
+    permissions:
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up GraalVM
+      uses: graalvm/setup-graalvm@v1.4.5
+      with:
+        java-version: '25'
+        distribution: 'graalvm-community'
+        native-image-job-reports: 'true'
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install clojure tools
+      uses: DeLaGuardo/setup-clojure@13.5
+      with:
+        # Install just one or all simultaneously
+        # The value must indicate a particular version of the tool, or use 'latest'
+        # to always provision the latest version
+        cli: latest              # Clojure CLI based on tools.deps
+        lein: latest             # Leiningen
+        bb: latest               # Babashka
+        cljfmt: latest           # cljfmt
+
+
+    - name: Install dependencies (mac/linux)
+      run: lein deps
+
+
+    - name: Build all (mac/linux)
+      run: lein compile :all
+
+
+    - name: Run tests (mac/linux)
+      run: lein test
+
+
+    - name: Build Native (mac/linux)
+      run: lein native
+
+
+    - name: Archive binary
+      uses: actions/upload-artifact@v4
+      with:
+        name: hello-world-${{ matrix.name }}-${{ matrix.arch }}
+        path: target/hello-world
+
+
+  build-windows:
+
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        include:
+          - os: windows-latest
+            name: windows
+            arch: x64
+
+    permissions:
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up GraalVM
+      uses: graalvm/setup-graalvm@v1.4.5
+      with:
+        java-version: '25'
+        distribution: 'graalvm-community'
+        native-image-job-reports: 'true'
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install clojure tools
+      uses: DeLaGuardo/setup-clojure@13.5
+      with:
+        # Install just one or all simultaneously
+        # The value must indicate a particular version of the tool, or use 'latest'
+        # to always provision the latest version
+        cli: latest              # Clojure CLI based on tools.deps
+        lein: latest             # Leiningen
+        bb: latest               # Babashka
+        cljfmt: latest           # cljfmt
+
+
+    - name: Install dependencies (win)
+      shell: cmd
+      run: lein deps
+
+
+    - name: Build all (win)
+      shell: cmd
+      run: lein compile :all
+
+
+    - name: Run tests (win)
+      shell: cmd
+      run: lein test
+
+
+    - name: Build Native (win)
+      shell: cmd
+      run: lein native-win
+
+
+    - name: Archive binary
+      uses: actions/upload-artifact@v4
+      with:
+        name: hello-world-${{ matrix.name }}-${{ matrix.arch }}
+        path: target/hello-world.exe
 ```
 
 Happy hacking!
