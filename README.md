@@ -8,7 +8,7 @@ Here the instructions on how to build your own Clojure projects with GraalVM.
 
   - [Download a GraalVM](https://github.com/graalvm/graalvm-ce-builds/releases)
   - [Build a "Hello world!" project](./doc/clojure-graalvm-native-binary.md)
-  - [Multi-platform builds with GitHub Actions](./doc/clojure-graalvm-native-binary.md#Multi-platform builds with GitHub Actions)
+  - [Multi-platform builds with GitHub Actions](./doc/clojure-graalvm-native-binary.md#multi-platform-builds-with-github-actions)
 
 Here the list of libraries tested:
 
