@@ -2,7 +2,7 @@
 
   :dependencies [[org.clojure/clojure "1.10.3"]
                  ;; add the library here
-                 [aysylu/loom "1.0.2"]]
+                 [aysylu/loom "1.2.2"]]
 
   :main simple.main
 
